@@ -1,0 +1,822 @@
+# Transformers Architecture Map Report
+
+**Generated:** 2026-04-02T05:20:56.695156+00:00
+**Hub data fetched:** 2026-04-02T06:13:31.712069+00:00
+**Repo root:** `/Users/mabables/CODE/REPOS/transformers`
+
+## 1. Executive Summary
+
+| Metric | Count |
+|--------|-------|
+| Model family folders | 449 |
+| Total classes parsed | 8002 |
+| Base model classes | 1365 |
+| Task head classes | 884 |
+| Families with Hub models | 383 |
+| Families with no Hub models | 66 |
+
+### Modality Distribution
+
+| Modality | Families |
+|----------|----------|
+| text | 231 |
+| vision | 105 |
+| multimodal | 75 |
+| audio | 34 |
+| unknown | 4 |
+
+### Architecture Type Distribution
+
+| Type | Families |
+|------|----------|
+| decoder_only | 109 |
+| vision_encoder | 80 |
+| encoder_decoder | 79 |
+| multimodal | 75 |
+| unknown | 39 |
+| speech | 36 |
+| encoder_only | 31 |
+
+## 2. Family Inventory (Sorted by Downloads)
+
+Showing all 449 families. Sorted by 30-day Hub downloads (descending).
+
+| # | Family | Modality | Architecture | Backends | Models | Authors | Downloads | Likes | Base Models | Task Heads | Tasks | Notes |
+|---|--------|----------|--------------|----------|--------|---------|-----------|-------|-------------|------------|-------|-------|
+| 1 | bert | text | encoder_only | PT | 2.1K | 992 | 464.4M | 42.1K | BertEncoder, BertPreTrainedModel, BertModel (+1) | BertForPreTraining, BertForMaskedLM, BertForNextSentencePrediction (+4) | fill-mask, multiple-choice, next-sentence-prediction, pretraining, question-answering, text-classification, token-classification |  |
+| 2 | qwen2 | text | decoder_only | PT | 1.8K | 799 | 86.9M | 44.2K | Qwen2PreTrainedModel, Qwen2Model | Qwen2ForCausalLM, Qwen2ForSequenceClassification, Qwen2ForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 3 | qwen3 | text | decoder_only | PT | 1.8K | 569 | 76.9M | 21.2K | Qwen3PreTrainedModel, Qwen3Model | Qwen3ForCausalLM, Qwen3ForSequenceClassification, Qwen3ForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 4 | llama | text | decoder_only | PT | 5.6K | 1.7K | 76.6M | 179.9K | LlamaPreTrainedModel, LlamaModel | LlamaForCausalLM, LlamaForSequenceClassification, LlamaForQuestionAnswering (+1) | question-answering, text-classification, text-generation, token-classification |  |
+| 5 | vit | vision | vision_encoder | PT | 230 | 153 | 63.9M | 4.6K | ViTEncoder, ViTPreTrainedModel, ViTModel | ViTForMaskedImageModeling, ViTForImageClassification | image-classification, masked-image-modeling |  |
+| 6 | clip | multimodal | multimodal | PT | 91 | 49 | 63.2M | 5.1K | CLIPPreTrainedModel, CLIPEncoder, CLIPTextModel (+2) | CLIPForImageClassification | image-classification |  |
+| 7 | roberta | text | decoder_only | PT | 753 | 410 | 63.1M | 12.3K | RobertaPreTrainedModel, RobertaEncoder, RobertaModel | RobertaForCausalLM, RobertaForMaskedLM, RobertaForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 8 | wav2vec2 | audio | speech | PT | 501 | 262 | 58.2M | 5.2K | Wav2Vec2FeatureEncoder, Wav2Vec2Encoder, Wav2Vec2PreTrainedModel (+1) | Wav2Vec2ForPreTraining, Wav2Vec2ForCTC, Wav2Vec2ForSequenceClassification (+2) | ForXVector, audio-frame-classification, ctc-speech-recognition, pretraining, text-classification |  |
+| 9 | xlm_roberta | text | decoder_only | PT | 514 | 235 | 53.2M | 8.7K | XLMRobertaPreTrainedModel, XLMRobertaEncoder, XLMRobertaModel | XLMRobertaForCausalLM, XLMRobertaForMaskedLM, XLMRobertaForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 10 | electra | text | decoder_only | PT | 135 | 75 | 52.1M | 933 | ElectraEncoder, ElectraPreTrainedModel, ElectraModel | ElectraForSequenceClassification, ElectraForPreTraining, ElectraForMaskedLM (+4) | fill-mask, multiple-choice, pretraining, question-answering, text-classification, text-generation, token-classification |  |
+| 11 | mpnet | text | encoder_only | PT | 28 | 21 | 34.9M | 1.8K | MPNetPreTrainedModel, MPNetEncoder, MPNetModel | MPNetForMaskedLM, MPNetForSequenceClassification, MPNetForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 12 | clap | audio | speech | PT | 6 | 2 | 26.5M | 272 | ClapAudioEncoder, ClapTextEncoder, ClapPreTrainedModel (+3) | — | — |  |
+| 13 | gpt2 | text | encoder_only | PT | 787 | 392 | 21.5M | 13.8K | GPT2PreTrainedModel, GPT2Model, GPT2LMHeadModel (+1) | GPT2ForSequenceClassification, GPT2ForTokenClassification, GPT2ForQuestionAnswering | question-answering, text-classification, token-classification |  |
+| 14 | distilbert | text | encoder_only | PT | 378 | 235 | 20.5M | 5.6K | DistilBertPreTrainedModel, DistilBertModel | DistilBertForMaskedLM, DistilBertForSequenceClassification, DistilBertForQuestionAnswering (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 15 | qwen3_5 | text | encoder_decoder | PT | 573 | 219 | 19.4M | 6.5K | Qwen3_5PreTrainedModel, Qwen3_5VisionModel, Qwen3_5TextModel (+1) | Qwen3_5ForCausalLM, Qwen3_5ForSequenceClassification, Qwen3_5ForConditionalGeneration | conditional-generation, text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 16 | modernbert | text | encoder_only | PT | 214 | 90 | 17.4M | 3.4K | ModernBertPreTrainedModel, ModernBertModel | ModernBertForMaskedLM, ModernBertForSequenceClassification, ModernBertForTokenClassification (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification | Has modular file; modeling files are auto-generated |
+| 17 | t5 | text | encoder_decoder | PT | 639 | 319 | 16.5M | 19.0K | T5PreTrainedModel, T5Model, T5EncoderModel | T5ForConditionalGeneration, T5ForSequenceClassification, T5ForTokenClassification (+1) | conditional-generation, question-answering, text-classification, token-classification |  |
+| 18 | whisper | audio | speech | PT | 425 | 254 | 16.3M | 17.2K | WhisperPreTrainedModel, WhisperEncoder, WhisperDecoder (+1) | WhisperForConditionalGeneration, WhisperForCausalLM, WhisperForAudioClassification | audio-classification, conditional-generation, text-generation |  |
+| 19 | qwen3_vl | text | encoder_decoder | PT | 278 | 112 | 15.5M | 6.0K | Qwen3VLPreTrainedModel, Qwen3VLVisionModel, Qwen3VLTextModel (+1) | Qwen3VLForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 20 | deberta_v2 | text | encoder_only | PT | 284 | 138 | 15.0M | 6.0K | DebertaV2Encoder, DebertaV2PreTrainedModel, DebertaV2Model | DebertaV2ForMaskedLM, DebertaV2ForSequenceClassification, DebertaV2ForTokenClassification (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 21 | qwen2_5_vl | multimodal | multimodal | PT | 283 | 129 | 14.7M | 12.2K | Qwen2_5_VLPreTrainedModel, Qwen2_5_VisionTransformerPretrainedModel, Qwen2_5_VLTextModel (+1) | Qwen2_5_VLForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 22 | qwen3_5_moe | text | encoder_decoder | PT | 159 | 74 | 12.4M | 5.2K | Qwen3_5MoePreTrainedModel, Qwen3_5MoeVisionModel, Qwen3_5MoeTextModel (+1) | Qwen3_5MoeForCausalLM, Qwen3_5MoeForConditionalGeneration | conditional-generation, text-generation | Has modular file; modeling files are auto-generated |
+| 23 | gpt_oss | text | decoder_only | PT | 148 | 98 | 12.2M | 11.9K | GptOssPreTrainedModel, GptOssModel | GptOssForCausalLM, GptOssForSequenceClassification, GptOssForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 24 | gemma3 | multimodal | multimodal | PT | 619 | 271 | 11.6M | 16.1K | Gemma3PreTrainedModel, Gemma3TextModel, Gemma3Model | Gemma3ForCausalLM, Gemma3ForConditionalGeneration, Gemma3ForSequenceClassification (+1) | conditional-generation, text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 25 | mistral | text | decoder_only | PT | 2.6K | 752 | 10.4M | 48.2K | MistralPreTrainedModel, MistralModel | MistralForCausalLM, MistralForTokenClassification, MistralForSequenceClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 26 | bart | text | encoder_decoder | PT | 161 | 93 | 10.1M | 6.2K | BartPreTrainedModel, PretrainedBartModel, BartPretrainedModel (+3) | BartForConditionalGeneration, BartForSequenceClassification, BartForQuestionAnswering (+1) | conditional-generation, question-answering, text-classification, text-generation |  |
+| 27 | qwen3_moe | text | decoder_only | PT | 225 | 101 | 9.2M | 11.3K | Qwen3MoePreTrainedModel, Qwen3MoeModel | Qwen3MoeForCausalLM, Qwen3MoeForSequenceClassification, Qwen3MoeForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 28 | opt | text | decoder_only | PT | 111 | 48 | 8.4M | 2.6K | OPTPreTrainedModel, OPTDecoder, OPTModel | OPTForCausalLM, OPTForSequenceClassification, OPTForQuestionAnswering | question-answering, text-classification, text-generation |  |
+| 29 | marian | multimodal | multimodal | PT | 340 | 37 | 7.9M | 3.2K | MarianPreTrainedModel, MarianEncoder, MarianDecoder (+2) | MarianForCausalLM | text-generation |  |
+| 30 | esm | multimodal | multimodal | PT | 45 | 15 | 7.3M | 468 | EsmEncoder, EsmPreTrainedModel, EsmModel (+1) | EsmForMaskedLM, EsmForSequenceClassification, EsmForTokenClassification (+1) | ForProteinFolding, fill-mask, text-classification, token-classification |  |
+| 31 | nemotron_h | text | decoder_only | PT | 60 | 31 | 6.7M | 3.3K | NemotronHPreTrainedModel, NemotronHModel | NemotronHForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 32 | qwen3_vl_moe | text | encoder_decoder | PT | 39 | 21 | 6.6M | 2.4K | Qwen3VLMoePreTrainedModel, Qwen3VLMoeVisionModel, Qwen3VLMoeTextModel (+1) | Qwen3VLMoeForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 33 | siglip | multimodal | multimodal | PT | 92 | 16 | 6.6M | 2.0K | SiglipPreTrainedModel, SiglipEncoder, SiglipTextModel (+2) | SiglipForImageClassification | image-classification |  |
+| 34 | qwen2_vl | multimodal | multimodal | PT | 88 | 46 | 5.8M | 5.8K | Qwen2VLPreTrainedModel, Qwen2VisionTransformerPretrainedModel, Qwen2VLTextModel (+1) | Qwen2VLForConditionalGeneration | conditional-generation |  |
+| 35 | gpt_neox | text | decoder_only | PT | 286 | 78 | 5.5M | 6.3K | GPTNeoXPreTrainedModel, GPTNeoXModel | GPTNeoXForCausalLM, GPTNeoXForSequenceClassification, GPTNeoXForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 36 | blip | multimodal | multimodal | PT | 22 | 14 | 5.4M | 2.6K | BlipPreTrainedModel, BlipEncoder, BlipVisionModel (+5) | BlipForConditionalGeneration, BlipForQuestionAnswering, BlipForImageTextRetrieval | conditional-generation, image-text-retrieval, question-answering |  |
+| 37 | phi3 | text | decoder_only | PT | 138 | 75 | 5.2M | 10.3K | Phi3PreTrainedModel, Phi3Model | Phi3ForCausalLM, Phi3ForSequenceClassification, Phi3ForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 38 | dinov2 | vision | vision_encoder | PT | 22 | 11 | 5.2M | 593 | Dinov2PreTrainedModel, Dinov2Encoder, Dinov2Model | Dinov2ForImageClassification | image-classification |  |
+| 39 | deepseek_v3 | text | decoder_only | PT | 86 | 37 | 5.1M | 30.5K | DeepseekV3PreTrainedModel, DeepseekV3Model | DeepseekV3ForCausalLM, DeepseekV3ForSequenceClassification, DeepseekV3ForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 40 | vision_encoder_decoder | text | encoder_decoder | PT | 132 | 79 | 5.0M | 4.7K | VisionEncoderDecoderModel | — | — |  |
+| 41 | llava | multimodal | multimodal | PT | 96 | 62 | 4.8M | 4.2K | LlavaPreTrainedModel, LlavaModel | LlavaForConditionalGeneration | conditional-generation |  |
+| 42 | table_transformer | vision | vision_encoder | PT | 12 | 8 | 4.7M | 720 | TableTransformerConvEncoder, TableTransformerConvModel, TableTransformerPreTrainedModel (+3) | TableTransformerForObjectDetection | object-detection |  |
+| 43 | qwen3_next | text | decoder_only | PT | 71 | 38 | 4.5M | 3.6K | Qwen3NextPreTrainedModel, Qwen3NextModel | Qwen3NextForCausalLM, Qwen3NextForSequenceClassification, Qwen3NextForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 44 | glm_ocr | text | encoder_decoder | PT | 11 | 7 | 4.1M | 1.6K | GlmOcrPreTrainedModel, GlmOcrVisionModel, GlmOcrTextModel (+1) | GlmOcrForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 45 | vitpose | vision | vision_encoder | PT | 10 | 3 | 4.1M | 110 | VitPosePreTrainedModel, VitPoseSimpleDecoder, VitPoseClassicDecoder | VitPoseForPoseEstimation | ForPoseEstimation |  |
+| 46 | glm_moe_dsa | text | decoder_only | PT | 19 | 14 | 3.8M | 2.1K | GlmMoeDsaPreTrainedModel, GlmMoeDsaModel | GlmMoeDsaForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 47 | glm4_moe_lite | text | decoder_only | PT | 43 | 29 | 3.1M | 2.2K | Glm4MoeLitePreTrainedModel, Glm4MoeLiteModel | Glm4MoeLiteForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 48 | depth_anything | vision | vision_encoder | PT | 16 | 5 | 3.0M | 223 | DepthAnythingPreTrainedModel | DepthAnythingForDepthEstimation | depth-estimation |  |
+| 49 | gemma2 | text | decoder_only | PT | 180 | 103 | 2.9M | 7.7K | Gemma2PreTrainedModel, Gemma2Model | Gemma2ForCausalLM, Gemma2ForSequenceClassification, Gemma2ForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 50 | vitmatte | vision | vision_encoder | PT | 4 | 1 | 2.7M | 71 | VitMattePreTrainedModel | VitMatteForImageMatting | ForImageMatting |  |
+| 51 | mobilevit | vision | vision_encoder | PT | 7 | 2 | 2.6M | 142 | MobileViTEncoder, MobileViTPreTrainedModel, MobileViTModel | MobileViTForImageClassification, MobileViTForSemanticSegmentation | image-classification, semantic-segmentation |  |
+| 52 | dinov3_vit | vision | vision_encoder | PT | 18 | 10 | 2.6M | 755 | DINOv3ViTPreTrainedModel, DINOv3ViTEncoder, DINOv3ViTModel | — | — | Has modular file; modeling files are auto-generated |
+| 53 | sam3_video | vision | vision_encoder | PT | 7 | 7 | 2.5M | 1.8K | Sam3VideoPreTrainedModel, Sam3VideoModel | — | — |  |
+| 54 | grounding_dino | vision | vision_encoder | PT | 5 | 2 | 2.4M | 270 | GroundingDinoConvEncoder, GroundingDinoConvModel, GroundingDinoPreTrainedModel (+3) | GroundingDinoForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 55 | segformer | vision | vision_encoder | PT | 67 | 31 | 2.3M | 1.3K | SegformerEncoder, SegformerPreTrainedModel, SegformerModel | SegformerForImageClassification, SegformerForSemanticSegmentation | image-classification, semantic-segmentation | Has modular file; modeling files are auto-generated |
+| 56 | wav2vec2_bert | audio | speech | PT | 23 | 15 | 2.3M | 241 | Wav2Vec2BertEncoder, Wav2Vec2BertPreTrainedModel, Wav2Vec2BertModel | Wav2Vec2BertForCTC, Wav2Vec2BertForSequenceClassification, Wav2Vec2BertForAudioFrameClassification (+1) | ForXVector, audio-frame-classification, ctc-speech-recognition, text-classification | Has modular file; modeling files are auto-generated |
+| 57 | florence2 | text | encoder_decoder | PT | 32 | 18 | 2.2M | 3.2K | Florence2VisionPreTrainedModel, Florence2PreTrainedModel, Florence2Model | Florence2ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 58 | rt_detr | vision | vision_encoder | PT | 19 | 5 | 2.1M | 96 | RTDetrConvEncoder, RTDetrPreTrainedModel, RTDetrHybridEncoder (+4) | RTDetrForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 59 | hubert | audio | speech | PT | 50 | 38 | 1.9M | 682 | HubertFeatureEncoder, HubertEncoder, HubertPreTrainedModel (+1) | HubertForCTC, HubertForSequenceClassification | ctc-speech-recognition, text-classification | Has modular file; modeling files are auto-generated |
+| 60 | longformer | text | encoder_only | PT | 43 | 33 | 1.9M | 530 | LongformerEncoder, LongformerPreTrainedModel, LongformerModel | LongformerForMaskedLM, LongformerForSequenceClassification, LongformerForQuestionAnswering (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 61 | lfm2_moe | text | decoder_only | PT | 18 | 9 | 1.9M | 685 | Lfm2MoePreTrainedModel, Lfm2MoeModel | Lfm2MoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 62 | phi | text | decoder_only | PT | 83 | 50 | 1.8M | 5.5K | PhiPreTrainedModel, PhiModel | PhiForCausalLM, PhiForSequenceClassification, PhiForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 63 | camembert | text | decoder_only | PT | 68 | 50 | 1.8M | 742 | CamembertPreTrainedModel, CamembertEncoder, CamembertModel | CamembertForMaskedLM, CamembertForSequenceClassification, CamembertForMultipleChoice (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 64 | deberta | text | encoder_only | PT | 26 | 19 | 1.7M | 596 | DebertaEncoder, DebertaPreTrainedModel, DebertaModel | DebertaForMaskedLM, DebertaForSequenceClassification, DebertaForTokenClassification (+1) | fill-mask, question-answering, text-classification, token-classification |  |
+| 65 | m2m_100 | text | encoder_decoder | PT | 55 | 39 | 1.7M | 2.3K | M2M100PreTrainedModel, M2M100Encoder, M2M100Decoder (+1) | M2M100ForConditionalGeneration | conditional-generation |  |
+| 66 | bloom | text | decoder_only | PT | 83 | 41 | 1.7M | 8.1K | BloomPreTrainedModel, BloomModel | BloomForCausalLM, BloomForSequenceClassification, BloomForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification |  |
+| 67 | deepseek_v2 | text | decoder_only | PT | 43 | 16 | 1.5M | 3.9K | DeepseekV2PreTrainedModel, DeepseekV2Model | DeepseekV2ForCausalLM, DeepseekV2ForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 68 | mixtral | text | decoder_only | PT | 408 | 161 | 1.4M | 9.0K | MixtralPreTrainedModel, MixtralModel | MixtralForCausalLM, MixtralForSequenceClassification, MixtralForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 69 | albert | text | encoder_only | PT | 68 | 43 | 1.3M | 553 | AlbertPreTrainedModel, AlbertModel | AlbertForPreTraining, AlbertForMaskedLM, AlbertForSequenceClassification (+3) | fill-mask, multiple-choice, pretraining, question-answering, text-classification, token-classification |  |
+| 70 | mimi | audio | speech | PT | 1 | 1 | 1.3M | 295 | MimiEncoder, MimiTransformerModel, MimiDecoder (+2) | — | — |  |
+| 71 | wavlm | audio | speech | PT | 14 | 7 | 1.3M | 255 | WavLMEncoder, WavLMPreTrainedModel, WavLMFeatureEncoder (+1) | WavLMForCTC, WavLMForSequenceClassification, WavLMForAudioFrameClassification (+1) | ForXVector, audio-frame-classification, ctc-speech-recognition, text-classification | Has modular file; modeling files are auto-generated |
+| 72 | owlv2 | vision | vision_encoder | PT | 6 | 1 | 1.3M | 202 | Owlv2PreTrainedModel, Owlv2Encoder, Owlv2TextModel (+2) | Owlv2ForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 73 | glm4v | vision | encoder_decoder | PT | 18 | 8 | 1.3M | 2.2K | Glm4vPreTrainedModel, Glm4vVisionModel, Glm4vTextModel (+1) | Glm4vForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 74 | smollm3 | text | decoder_only | PT | 21 | 17 | 1.2M | 1.1K | SmolLM3PreTrainedModel, SmolLM3Model | SmolLM3ForCausalLM, SmolLM3ForSequenceClassification, SmolLM3ForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 75 | lfm2 | text | decoder_only | PT | 95 | 37 | 1.2M | 4.0K | Lfm2PreTrainedModel, Lfm2Model | Lfm2ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 76 | minimax_m2 | text | decoder_only | PT | 40 | 24 | 1.2M | 4.4K | MiniMaxM2PreTrainedModel, MiniMaxM2Model | MiniMaxM2ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 77 | yolos | vision | vision_encoder | PT | 16 | 8 | 1.1M | 606 | YolosEncoder, YolosPreTrainedModel, YolosModel | YolosForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 78 | mbart | text | encoder_decoder | PT | 66 | 40 | 1.1M | 1.4K | MBartPreTrainedModel, MBartEncoder, MBartDecoder (+1) | MBartForConditionalGeneration, MBartForSequenceClassification, MBartForQuestionAnswering (+1) | conditional-generation, question-answering, text-classification, text-generation |  |
+| 79 | mask2former | multimodal | multimodal | PT | 31 | 6 | 1.1M | 193 | Mask2FormerPixelDecoder, Mask2FormerMaskedAttentionDecoder, Mask2FormerPreTrainedModel (+1) | Mask2FormerForUniversalSegmentation | universal-segmentation | Has modular file; modeling files are auto-generated |
+| 80 | gpt_neo | text | decoder_only | PT | 58 | 36 | 1.0M | 1.6K | GPTNeoPreTrainedModel, GPTNeoModel | GPTNeoForCausalLM, GPTNeoForSequenceClassification, GPTNeoForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification |  |
+| 81 | blip_2 | multimodal | multimodal | PT | 13 | 5 | 1.0M | 2.5K | Blip2PreTrainedModel, Blip2Encoder, Blip2VisionModel (+3) | Blip2ForConditionalGeneration, Blip2ForImageTextRetrieval | conditional-generation, image-text-retrieval |  |
+| 82 | layoutlmv3 | multimodal | multimodal | PT | 35 | 18 | 1.0M | 899 | LayoutLMv3Encoder, LayoutLMv3PreTrainedModel, LayoutLMv3Model | LayoutLMv3ForTokenClassification, LayoutLMv3ForQuestionAnswering, LayoutLMv3ForSequenceClassification | question-answering, text-classification, token-classification |  |
+| 83 | clipseg | multimodal | multimodal | PT | 5 | 3 | 995.2K | 142 | CLIPSegPreTrainedModel, CLIPSegEncoder, CLIPSegDecoder (+3) | CLIPSegForImageSegmentation | image-segmentation |  |
+| 84 | qwen2_5_omni | text | encoder_decoder | PT | 28 | 20 | 986.6K | 2.5K | Qwen2_5OmniPreTrainedModel, Qwen2_5OmniAudioEncoder, Qwen2_5OmniVisionEncoder (+5) | Qwen2_5OmniPreTrainedModelForConditionalGeneration, Qwen2_5OmniThinkerForConditionalGeneration, Qwen2_5OmniTalkerForConditionalGeneration (+1) | conditional-generation | Has modular file; modeling files are auto-generated |
+| 85 | parakeet | text | speech | PT | 2 | 1 | 983.6K | 68 | ParakeetPreTrainedModel, ParakeetEncoder | ParakeetForCTC | ctc-speech-recognition | Has modular file; modeling files are auto-generated |
+| 86 | internvl | multimodal | multimodal | PT | 22 | 5 | 980.9K | 131 | InternVLVisionEncoder, InternVLVisionPreTrainedModel, InternVLVisionModel (+2) | InternVLForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 87 | gemma3n | multimodal | multimodal | PT | 39 | 16 | 900.3K | 1.6K | Gemma3nPreTrainedModel, Gemma3nAudioEncoder, Gemma3nTextModel (+1) | Gemma3nForCausalLM, Gemma3nForConditionalGeneration | conditional-generation, text-generation | Has modular file; modeling files are auto-generated |
+| 88 | glm4_moe | text | decoder_only | PT | 58 | 25 | 881.9K | 6.4K | Glm4MoePreTrainedModel, Glm4MoeModel | Glm4MoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 89 | siglip2 | multimodal | multimodal | PT | 2 | 1 | 857.5K | 91 | Siglip2PreTrainedModel, Siglip2Encoder, Siglip2TextModel (+2) | Siglip2ForImageClassification | image-classification | Has modular file; modeling files are auto-generated |
+| 90 | audio_spectrogram_transformer | audio | speech | PT | 33 | 18 | 839.2K | 438 | ASTEncoder, ASTPreTrainedModel, ASTModel | ASTForAudioClassification | audio-classification |  |
+| 91 | llava_next | multimodal | multimodal | PT | 25 | 12 | 785.8K | 974 | LlavaNextPreTrainedModel, LlavaNextModel | LlavaNextForConditionalGeneration | conditional-generation |  |
+| 92 | vits | audio | speech | PT | 127 | 20 | 774.0K | 913 | VitsPosteriorEncoder, VitsEncoder, VitsTextEncoder (+2) | — | — |  |
+| 93 | mistral3 | text | encoder_decoder | PT | 28 | 19 | 771.7K | 990 | Mistral3PreTrainedModel, Mistral3Model | Mistral3ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 94 | phimoe | multimodal | multimodal | PT | 10 | 7 | 753.0K | 642 | PhimoePreTrainedModel, PhimoeModel | PhimoeForCausalLM, PhimoeForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 95 | granitemoehybrid | text | decoder_only | PT | 63 | 13 | 748.5K | 1.7K | GraniteMoeHybridPreTrainedModel, GraniteMoeHybridModel | GraniteMoeHybridForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 96 | eurobert | text | encoder_only | PT | 16 | 4 | 724.0K | 189 | EuroBertPreTrainedModel, EuroBertModel | EuroBertForMaskedLM, EuroBertForSequenceClassification, EuroBertForTokenClassification | fill-mask, text-classification, token-classification | Has modular file; modeling files are auto-generated |
+| 97 | mobilebert | text | encoder_only | PT | 10 | 8 | 718.5K | 117 | MobileBertEncoder, MobileBertPreTrainedModel, MobileBertModel | MobileBertForPreTraining, MobileBertForMaskedLM, MobileBertForNextSentencePrediction (+4) | fill-mask, multiple-choice, next-sentence-prediction, pretraining, question-answering, text-classification, token-classification |  |
+| 98 | idefics3 | multimodal | multimodal | PT | 20 | 11 | 704.2K | 4.4K | Idefics3Encoder, Idefics3PreTrainedModel, Idefics3Model | Idefics3ForConditionalGeneration | conditional-generation |  |
+| 99 | gemma | text | decoder_only | PT | 156 | 86 | 683.6K | 9.5K | GemmaPreTrainedModel, GemmaModel | GemmaForCausalLM, GemmaForSequenceClassification, GemmaForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 100 | mt5 | text | encoder_decoder | PT | 84 | 51 | 664.3K | 1.6K | MT5PreTrainedModel, MT5Model, MT5EncoderModel | MT5ForConditionalGeneration, MT5ForSequenceClassification, MT5ForTokenClassification (+1) | conditional-generation, question-answering, text-classification, token-classification |  |
+| 101 | olmo2 | text | decoder_only | PT | 40 | 7 | 658.5K | 488 | Olmo2PreTrainedModel, Olmo2Model | Olmo2ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 102 | lightglue | vision | vision_encoder | PT | 3 | 2 | 657.8K | 77 | LightGluePositionalEncoder, LightGluePreTrainedModel | LightGlueForKeypointMatching | ForKeypointMatching | Has modular file; modeling files are auto-generated |
+| 103 | granitemoe | text | decoder_only | PT | 10 | 2 | 654.1K | 143 | GraniteMoePreTrainedModel, GraniteMoeModel | GraniteMoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 104 | beit | vision | vision_encoder | PT | 29 | 12 | 645.9K | 380 | BeitEncoder, BeitPreTrainedModel, BeitModel | BeitForMaskedImageModeling, BeitForImageClassification, BeitForSemanticSegmentation | image-classification, masked-image-modeling, semantic-segmentation |  |
+| 105 | layoutlmv2 | multimodal | multimodal | PT | 6 | 4 | 645.2K | 177 | LayoutLMv2Encoder, LayoutLMv2PreTrainedModel, LayoutLMv2Model | LayoutLMv2ForSequenceClassification, LayoutLMv2ForTokenClassification, LayoutLMv2ForQuestionAnswering | question-answering, text-classification, token-classification |  |
+| 106 | llava_onevision | multimodal | multimodal | PT | 14 | 6 | 636.5K | 263 | LlavaOnevisionPreTrainedModel, LlavaOnevisionModel | LlavaOnevisionForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 107 | swinv2 | vision | vision_encoder | PT | 20 | 7 | 635.2K | 122 | Swinv2Encoder, Swinv2PreTrainedModel, Swinv2Model | Swinv2ForMaskedImageModeling, Swinv2ForImageClassification | image-classification, masked-image-modeling |  |
+| 108 | convbert | text | encoder_only | PT | 5 | 3 | 621.2K | 24 | ConvBertPreTrainedModel, ConvBertEncoder, ConvBertModel | ConvBertForMaskedLM, ConvBertForSequenceClassification, ConvBertForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 109 | fnet | text | encoder_only | PT | 1 | 1 | 617.7K | 18 | FNetEncoder, FNetPreTrainedModel, FNetModel | FNetForPreTraining, FNetForMaskedLM, FNetForNextSentencePrediction (+4) | fill-mask, multiple-choice, next-sentence-prediction, pretraining, question-answering, text-classification, token-classification |  |
+| 110 | superpoint | vision | encoder_decoder | PT | 1 | 1 | 609.2K | 24 | SuperPointEncoder, SuperPointInterestPointDecoder, SuperPointDescriptorDecoder (+1) | SuperPointForKeypointDetection | ForKeypointDetection |  |
+| 111 | olmo3 | text | decoder_only | PT | 72 | 12 | 602.7K | 837 | Olmo3PreTrainedModel, Olmo3Model | Olmo3ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 112 | zoedepth | vision | vision_encoder | PT | 3 | 1 | 600.9K | 23 | ZoeDepthPatchTransformerEncoder, ZoeDepthPreTrainedModel | ZoeDepthForDepthEstimation | depth-estimation |  |
+| 113 | dpt | vision | vision_encoder | PT | 13 | 2 | 588.1K | 355 | DPTPreTrainedModel, DPTViTEncoder, DPTModel | DPTForDepthEstimation, DPTForSemanticSegmentation | depth-estimation, semantic-segmentation | Has modular file; modeling files are auto-generated |
+| 114 | llama4 | vision | encoder_decoder | PT | 50 | 21 | 579.6K | 3.2K | Llama4PreTrainedModel, Llama4TextModel, Llama4VisionEncoder (+1) | Llama4ForCausalLM, Llama4ForConditionalGeneration | conditional-generation, text-generation |  |
+| 115 | mm_grounding_dino | vision | vision_encoder | PT | 10 | 2 | 547.2K | 58 | MMGroundingDinoPreTrainedModel, MMGroundingDinoConvEncoder, MMGroundingDinoConvModel (+3) | MMGroundingDinoForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 116 | detr | vision | vision_encoder | PT | 31 | 22 | 537.2K | 1.4K | DetrConvEncoder, DetrPreTrainedModel, DetrEncoder (+2) | DetrForObjectDetection, DetrForSegmentation | ForSegmentation, object-detection |  |
+| 117 | timm_wrapper | vision | vision_encoder | PT | 5 | 4 | 532.4K | 59 | TimmWrapperPreTrainedModel, TimmWrapperModel | TimmWrapperForImageClassification | image-classification |  |
+| 118 | vit_mae | vision | encoder_decoder | PT | 6 | 3 | 529.1K | 61 | ViTMAEEncoder, ViTMAEPreTrainedModel, ViTMAEModel (+1) | ViTMAEForPreTraining | pretraining |  |
+| 119 | smolvlm | vision | encoder_decoder | PT | 17 | 8 | 527.9K | 702 | SmolVLMPreTrainedModel, SmolVLMEncoder, SmolVLMModel | SmolVLMForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 120 | xlnet | multimodal | multimodal | PT | 16 | 11 | 527.2K | 154 | XLNetPreTrainedModel, XLNetModel, XLNetLMHeadModel | XLNetForSequenceClassification, XLNetForTokenClassification, XLNetForMultipleChoice (+2) | ForQuestionAnsweringSimple, multiple-choice, question-answering, text-classification, token-classification |  |
+| 121 | qwen3_omni_moe | text | encoder_decoder | PT | 17 | 9 | 524.2K | 1.5K | Qwen3OmniMoePreTrainedModel, Qwen3OmniMoeAudioEncoder, Qwen3OmniMoeVisionEncoder (+5) | Qwen3OmniMoePreTrainedModelForConditionalGeneration, Qwen3OmniMoeThinkerForConditionalGeneration, Qwen3OmniMoeTalkerCodePredictorModelForConditionalGeneration (+2) | conditional-generation | Has modular file; modeling files are auto-generated |
+| 122 | resnet | vision | vision_encoder | PT | 32 | 25 | 509.3K | 663 | ResNetEncoder, ResNetPreTrainedModel, ResNetModel | ResNetForImageClassification | image-classification |  |
+| 123 | sam | vision | encoder_decoder | PT | 10 | 7 | 498.4K | 484 | SamMaskDecoder, SamPromptEncoder, SamPreTrainedModel (+3) | — | — |  |
+| 124 | dpr | text | unknown | PT | 14 | 4 | 467.6K | 93 | DPRPreTrainedModel, DPREncoder, DPRPretrainedContextEncoder (+3) | — | — |  |
+| 125 | pegasus | text | encoder_decoder | PT | 22 | 14 | 432.1K | 885 | PegasusPreTrainedModel, PegasusEncoder, PegasusDecoder (+1) | PegasusForConditionalGeneration, PegasusForCausalLM | conditional-generation, text-generation |  |
+| 126 | paligemma | multimodal | multimodal | PT | 36 | 9 | 423.3K | 1.5K | PaliGemmaPreTrainedModel, PaliGemmaModel | PaliGemmaForConditionalGeneration | conditional-generation |  |
+| 127 | luke | multimodal | multimodal | PT | 14 | 5 | 417.4K | 191 | LukeEncoder, LukePreTrainedModel, LukeModel | LukeForMaskedLM, LukeForEntityClassification, LukeForEntityPairClassification (+5) | ForEntityClassification, ForEntityPairClassification, ForEntitySpanClassification, fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 128 | t5gemma | text | encoder_decoder | PT | 26 | 3 | 366.5K | 141 | T5GemmaPreTrainedModel, T5GemmaEncoder, T5GemmaDecoder (+2) | T5GemmaForConditionalGeneration, T5GemmaForSequenceClassification, T5GemmaForTokenClassification | conditional-generation, text-classification, token-classification | Has modular file; modeling files are auto-generated |
+| 129 | qwen2_audio | audio | speech | PT | 4 | 3 | 365.9K | 709 | Qwen2AudioPreTrainedModel, Qwen2AudioEncoder | Qwen2AudioForConditionalGeneration | conditional-generation |  |
+| 130 | dac | text | encoder_decoder | PT | 4 | 2 | 364.4K | 14 | DacDecoder, DacEncoder, DacPreTrainedModel (+1) | — | — |  |
+| 131 | granite | text | decoder_only | PT | 38 | 9 | 350.6K | 1.2K | GranitePreTrainedModel, GraniteModel | GraniteForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 132 | wav2vec2_conformer | audio | speech | PT | 4 | 2 | 347.7K | 24 | Wav2Vec2ConformerFeatureEncoder, Wav2Vec2ConformerEncoder, Wav2Vec2ConformerPreTrainedModel (+1) | Wav2Vec2ConformerForPreTraining, Wav2Vec2ConformerForCTC, Wav2Vec2ConformerForSequenceClassification (+2) | ForXVector, audio-frame-classification, ctc-speech-recognition, pretraining, text-classification | Has modular file; modeling files are auto-generated |
+| 133 | mllama | multimodal | multimodal | PT | 31 | 12 | 346.0K | 3.3K | MllamaVisionEncoder, MllamaPreTrainedModel, MllamaVisionModel (+2) | MllamaForCausalLM, MllamaForConditionalGeneration | conditional-generation, text-generation |  |
+| 134 | falcon | text | decoder_only | PT | 55 | 26 | 344.2K | 7.9K | FalconPreTrainedModel, FalconModel | FalconForCausalLM, FalconForSequenceClassification, FalconForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification |  |
+| 135 | granite_speech | audio | speech | PT | 5 | 2 | 337.2K | 511 | GraniteSpeechPreTrainedModel, GraniteSpeechCTCEncoder | GraniteSpeechForConditionalGeneration | conditional-generation |  |
+| 136 | speecht5 | audio | speech | PT | 28 | 14 | 328.4K | 1.0K | SpeechT5FeatureEncoder, SpeechT5PreTrainedModel, SpeechT5Encoder (+2) | SpeechT5ForSpeechToText, SpeechT5ForTextToSpeech, SpeechT5ForSpeechToSpeech | ForSpeechToSpeech, ForSpeechToText, ForTextToSpeech |  |
+| 137 | oneformer | multimodal | multimodal | PT | 6 | 1 | 318.3K | 81 | OneFormerPixelDecoder, OneFormerTransformerDecoderQueryTransformerDecoder, OneFormerTransformerDecoder (+5) | OneFormerForUniversalSegmentation | universal-segmentation |  |
+| 138 | videomae | vision | encoder_decoder | PT | 22 | 12 | 294.9K | 175 | VideoMAEEncoder, VideoMAEPreTrainedModel, VideoMAEModel (+1) | VideoMAEForPreTraining, VideoMAEForVideoClassification | pretraining, video-classification |  |
+| 139 | big_bird | text | decoder_only | PT | 13 | 10 | 291.4K | 174 | BigBirdEncoder, BigBirdPreTrainedModel, BigBirdModel | BigBirdForPreTraining, BigBirdForMaskedLM, BigBirdForCausalLM (+5) | ForQuestionAnsweringHead, fill-mask, multiple-choice, pretraining, question-answering, text-classification, text-generation, token-classification |  |
+| 140 | qwen2_moe | text | decoder_only | PT | 22 | 8 | 264.7K | 572 | Qwen2MoePreTrainedModel, Qwen2MoeModel | Qwen2MoeForCausalLM, Qwen2MoeForSequenceClassification, Qwen2MoeForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 141 | vibevoice_asr | text | encoder_decoder | PT | 2 | 2 | 258.3K | 72 | VibeVoiceAsrPreTrainedModel | VibeVoiceAsrForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 142 | openai | text | encoder_only | PT | 2 | 2 | 255.3K | 296 | OpenAIGPTPreTrainedModel, OpenAIGPTModel, OpenAIGPTLMHeadModel (+1) | OpenAIGPTForSequenceClassification | text-classification |  |
+| 143 | gptj | text | decoder_only | PT | 61 | 28 | 253.8K | 3.3K | GPTJPreTrainedModel, GPTJModel | GPTJForCausalLM, GPTJForSequenceClassification, GPTJForQuestionAnswering | question-answering, text-classification, text-generation |  |
+| 144 | dinov2_with_registers | vision | vision_encoder | PT | 6 | 2 | 251.4K | 42 | Dinov2WithRegistersPreTrainedModel, Dinov2WithRegistersEncoder, Dinov2WithRegistersModel | Dinov2WithRegistersForImageClassification | image-classification | Has modular file; modeling files are auto-generated |
+| 145 | mamba | text | decoder_only | PT | 9 | 5 | 240.1K | 218 | MambaPreTrainedModel, MambaModel | MambaForCausalLM | text-generation |  |
+| 146 | encodec | audio | speech | PT | 4 | 2 | 236.7K | 114 | EncodecEncoder, EncodecDecoder, EncodecPreTrainedModel (+1) | — | — |  |
+| 147 | pp_doclayout_v3 | vision | vision_encoder | PT | 1 | 1 | 233.0K | 20 | PPDocLayoutV3PreTrainedModel, PPDocLayoutV3HybridEncoder, PPDocLayoutV3Decoder (+2) | PPDocLayoutV3ForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 148 | biogpt | text | decoder_only | PT | 8 | 6 | 230.0K | 659 | BioGptPreTrainedModel, BioGptModel | BioGptForCausalLM, BioGptForTokenClassification, BioGptForSequenceClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 149 | bamba | text | decoder_only | PT | 3 | 2 | 226.6K | 56 | BambaPreTrainedModel, BambaModel | BambaForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 150 | glmasr | text | encoder_decoder | PT | 2 | 2 | 217.2K | 359 | GlmAsrPreTrainedModel, GlmAsrEncoder | GlmAsrForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 151 | sam2_video | vision | encoder_decoder | PT | 8 | 1 | 213.7K | 372 | Sam2VideoPreTrainedModel, Sam2VideoMemoryEncoder, Sam2VideoPromptEncoder (+2) | — | — | Has modular file; modeling files are auto-generated |
+| 152 | markuplm | text | encoder_only | PT | 3 | 1 | 213.3K | 48 | MarkupLMEncoder, MarkupLMPreTrainedModel, MarkupLMModel | MarkupLMForQuestionAnswering, MarkupLMForTokenClassification, MarkupLMForSequenceClassification | question-answering, text-classification, token-classification |  |
+| 153 | seed_oss | text | decoder_only | PT | 20 | 12 | 208.7K | 770 | SeedOssPreTrainedModel, SeedOssModel | SeedOssForCausalLM, SeedOssForSequenceClassification, SeedOssForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 154 | cohere | text | decoder_only | PT | 27 | 15 | 199.7K | 5.1K | CoherePreTrainedModel, CohereModel | CohereForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 155 | vjepa2 | text | unknown | PT | 9 | 2 | 197.6K | 306 | VJEPA2Encoder, VJEPA2PreTrainedModel, VJEPA2Model | VJEPA2ForVideoClassification | video-classification |  |
+| 156 | apertus | text | decoder_only | PT | 12 | 6 | 193.1K | 939 | ApertusPreTrainedModel, ApertusModel | ApertusForCausalLM, ApertusForTokenClassification | text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 157 | chinese_clip | multimodal | multimodal | PT | 5 | 2 | 190.1K | 220 | ChineseCLIPPreTrainedModel, ChineseCLIPTextEncoder, ChineseCLIPVisionEncoder (+3) | — | — |  |
+| 158 | xglm | text | decoder_only | PT | 18 | 4 | 189.0K | 369 | XGLMPreTrainedModel, XGLMModel | XGLMForCausalLM | text-generation |  |
+| 159 | aria | multimodal | multimodal | PT | 2 | 2 | 188.6K | 637 | AriaTextPreTrainedModel, AriaPreTrainedModel, AriaTextModel (+1) | AriaTextForCausalLM, AriaForConditionalGeneration | conditional-generation, text-generation | Has modular file; modeling files are auto-generated |
+| 160 | cohere2 | text | decoder_only | PT | 28 | 12 | 187.9K | 1.4K | Cohere2PreTrainedModel, Cohere2Model | Cohere2ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 161 | owlvit | vision | vision_encoder | PT | 5 | 3 | 186.3K | 189 | OwlViTPreTrainedModel, OwlViTEncoder, OwlViTTextModel (+2) | OwlViTForObjectDetection | object-detection |  |
+| 162 | falcon_mamba | text | decoder_only | PT | 6 | 2 | 184.4K | 369 | FalconMambaPreTrainedModel, FalconMambaModel | FalconMambaForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 163 | flaubert | multimodal | multimodal | PT | 7 | 4 | 179.4K | 21 | FlaubertPreTrainedModel, FlaubertModel, FlaubertWithLMHeadModel | FlaubertForSequenceClassification, FlaubertForTokenClassification, FlaubertForQuestionAnsweringSimple (+2) | ForQuestionAnsweringSimple, multiple-choice, question-answering, text-classification, token-classification |  |
+| 164 | layoutlm | text | encoder_only | PT | 8 | 4 | 178.8K | 1.5K | LayoutLMEncoder, LayoutLMPreTrainedModel, LayoutLMModel | LayoutLMForMaskedLM, LayoutLMForSequenceClassification, LayoutLMForTokenClassification (+1) | fill-mask, question-answering, text-classification, token-classification |  |
+| 165 | roformer | text | decoder_only | PT | 7 | 5 | 176.3K | 37 | RoFormerEncoder, RoFormerPreTrainedModel, RoFormerModel | RoFormerForMaskedLM, RoFormerForCausalLM, RoFormerForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification |  |
+| 166 | lfm2_vl | vision | encoder_decoder | PT | 15 | 4 | 175.8K | 786 | Lfm2VlPreTrainedModel, Lfm2VlModel | Lfm2VlForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 167 | glm4v_moe | text | encoder_decoder | PT | 12 | 6 | 174.8K | 1.2K | Glm4vMoePreTrainedModel, Glm4vMoeVisionModel, Glm4vMoeTextModel (+1) | Glm4vMoeForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 168 | swin | vision | vision_encoder | PT | 38 | 24 | 174.3K | 265 | SwinEncoder, SwinPreTrainedModel, SwinModel | SwinForMaskedImageModeling, SwinForImageClassification | image-classification, masked-image-modeling |  |
+| 169 | codegen | text | decoder_only | PT | 30 | 11 | 174.0K | 901 | CodeGenPreTrainedModel, CodeGenModel | CodeGenForCausalLM | text-generation |  |
+| 170 | idefics2 | multimodal | multimodal | PT | 5 | 3 | 170.2K | 671 | Idefics2Encoder, Idefics2PreTrainedModel, Idefics2Model | Idefics2ForConditionalGeneration | conditional-generation |  |
+| 171 | audioflamingo3 | multimodal | multimodal | PT | 2 | 1 | 169.9K | 262 | AudioFlamingo3PreTrainedModel, AudioFlamingo3Encoder | AudioFlamingo3ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 172 | ernie | text | decoder_only | PT | 14 | 5 | 169.8K | 391 | ErnieEncoder, ErniePreTrainedModel, ErnieModel | ErnieForPreTraining, ErnieForCausalLM, ErnieForMaskedLM (+5) | fill-mask, multiple-choice, next-sentence-prediction, pretraining, question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 173 | reformer | text | encoder_only | PT | 2 | 1 | 167.8K | 32 | ReformerEncoder, ReformerPreTrainedModel, ReformerModel | ReformerForMaskedLM, ReformerForSequenceClassification, ReformerForQuestionAnswering | fill-mask, question-answering, text-classification |  |
+| 174 | kosmos2 | multimodal | multimodal | PT | 1 | 1 | 162.4K | 184 | Kosmos2PreTrainedModel, Kosmos2VisionEncoder, Kosmos2VisionModel (+2) | Kosmos2TextForCausalLM, Kosmos2ForConditionalGeneration | conditional-generation, text-generation |  |
+| 175 | dinov3_convnext | vision | vision_encoder | PT | 4 | 1 | 159.9K | 91 | DINOv3ConvNextPreTrainedModel, DINOv3ConvNextEncoder, DINOv3ConvNextModel | — | — |  |
+| 176 | fsmt | text | encoder_decoder | PT | 8 | 4 | 157.5K | 94 | PretrainedFSMTModel, FSMTEncoder, FSMTDecoder (+1) | FSMTForConditionalGeneration | conditional-generation |  |
+| 177 | starcoder2 | text | decoder_only | PT | 17 | 9 | 149.0K | 1.5K | Starcoder2PreTrainedModel, Starcoder2Model | Starcoder2ForCausalLM, Starcoder2ForSequenceClassification, Starcoder2ForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 178 | canine | text | encoder_only | PT | 9 | 4 | 148.6K | 69 | CanineEncoder, CaninePreTrainedModel, CanineModel | CanineForSequenceClassification, CanineForMultipleChoice, CanineForTokenClassification (+1) | multiple-choice, question-answering, text-classification, token-classification |  |
+| 179 | altclip | multimodal | multimodal | PT | 3 | 1 | 147.8K | 44 | AltRobertaEncoder, AltCLIPEncoder, AltCLIPPreTrainedModel (+4) | — | — |  |
+| 180 | speech_to_text | audio | speech | PT | 7 | 2 | 147.7K | 61 | Speech2TextPreTrainedModel, Speech2TextEncoder, Speech2TextDecoder (+1) | Speech2TextForConditionalGeneration | conditional-generation |  |
+| 181 | x_clip | multimodal | multimodal | PT | 7 | 1 | 147.4K | 163 | XCLIPPreTrainedModel, XCLIPEncoder, XCLIPTextModel (+3) | — | — |  |
+| 182 | csm | text | encoder_decoder | PT | 12 | 5 | 145.2K | 2.5K | CsmPreTrainedModel, CsmDepthDecoderModel, CsmBackboneModel | CsmDepthDecoderForCausalLM, CsmForConditionalGeneration | conditional-generation, text-generation | Has modular file; modeling files are auto-generated |
+| 183 | moshi | text | encoder_decoder | PT | 2 | 1 | 144.1K | 1 | MoshiPreTrainedModel, MoshiDepthDecoder, MoshiModel | MoshiForCausalLM, MoshiForConditionalGeneration | conditional-generation, text-generation |  |
+| 184 | plbart | text | encoder_decoder | PT | 3 | 1 | 143.1K | 9 | PLBartPreTrainedModel, PLBartEncoder, PLBartDecoder (+1) | PLBartForConditionalGeneration, PLBartForSequenceClassification, PLBartForCausalLM | conditional-generation, text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 185 | funnel | text | encoder_decoder | PT | 4 | 4 | 141.4K | 9 | FunnelEncoder, FunnelDecoder, FunnelPreTrainedModel (+2) | FunnelForPreTraining, FunnelForMaskedLM, FunnelForSequenceClassification (+3) | fill-mask, multiple-choice, pretraining, question-answering, text-classification, token-classification |  |
+| 186 | ctrl | text | encoder_only | PT | 2 | 2 | 138.7K | 16 | CTRLPreTrainedModel, CTRLModel, CTRLLMHeadModel | CTRLForSequenceClassification | text-classification |  |
+| 187 | exaone4 | text | decoder_only | PT | 13 | 4 | 137.2K | 539 | Exaone4PreTrainedModel, Exaone4Model | Exaone4ForCausalLM, Exaone4ForSequenceClassification, Exaone4ForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 188 | blenderbot | text | encoder_decoder | PT | 4 | 3 | 137.1K | 624 | BlenderbotPreTrainedModel, BlenderbotEncoder, BlenderbotDecoder (+1) | BlenderbotForConditionalGeneration, BlenderbotForCausalLM | conditional-generation, text-generation |  |
+| 189 | olmoe | text | decoder_only | PT | 6 | 2 | 134.7K | 338 | OlmoePreTrainedModel, OlmoeModel | OlmoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 190 | xlm | multimodal | multimodal | PT | 5 | 2 | 134.5K | 6 | XLMPreTrainedModel, XLMModel, XLMWithLMHeadModel | XLMForSequenceClassification, XLMForQuestionAnsweringSimple, XLMForQuestionAnswering (+2) | ForQuestionAnsweringSimple, multiple-choice, question-answering, text-classification, token-classification |  |
+| 191 | gpt_bigcode | text | decoder_only | PT | 31 | 16 | 133.5K | 5.5K | GPTBigCodePreTrainedModel, GPTBigCodeModel | GPTBigCodeForCausalLM, GPTBigCodeForSequenceClassification, GPTBigCodeForTokenClassification | text-classification, text-generation, token-classification |  |
+| 192 | bert_generation | text | encoder_decoder | PT | 2 | 2 | 132.3K | 1 | BertEncoder, BertGenerationPreTrainedModel, BertGenerationEncoder (+1) | — | — |  |
+| 193 | janus | multimodal | multimodal | PT | 4 | 3 | 131.9K | 11 | JanusPreTrainedModel, JanusVisionEncoder, JanusVisionModel (+3) | JanusForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 194 | prophetnet | text | encoder_decoder | PT | 4 | 2 | 131.4K | 15 | ProphetNetPreTrainedModel, ProphetNetEncoder, ProphetNetDecoder (+1) | ProphetNetForConditionalGeneration, ProphetNetForCausalLM | conditional-generation, text-generation |  |
+| 195 | roc_bert | text | decoder_only | PT | 1 | 1 | 130.9K | 5 | RoCBertEncoder, RoCBertPreTrainedModel, RoCBertModel | RoCBertForPreTraining, RoCBertForMaskedLM, RoCBertForCausalLM (+4) | fill-mask, multiple-choice, pretraining, question-answering, text-classification, text-generation, token-classification |  |
+| 196 | blenderbot_small | text | encoder_decoder | PT | 2 | 1 | 130.5K | 57 | BlenderbotSmallPreTrainedModel, BlenderbotSmallEncoder, BlenderbotSmallDecoder (+1) | BlenderbotSmallForConditionalGeneration, BlenderbotSmallForCausalLM | conditional-generation, text-generation |  |
+| 197 | rt_detr_v2 | vision | vision_encoder | PT | 11 | 6 | 129.9K | 58 | RTDetrV2PreTrainedModel, RTDetrV2Decoder, RTDetrV2ConvEncoder (+2) | RTDetrV2ForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 198 | mgp_str | multimodal | multimodal | PT | 1 | 1 | 128.5K | 65 | MgpstrEncoder, MgpstrPreTrainedModel, MgpstrModel | MgpstrForSceneTextRecognition | ForSceneTextRecognition |  |
+| 199 | clvp | text | encoder_decoder | PT | 1 | 1 | 127.0K | — | ClvpConditioningEncoder, ClvpPreTrainedModel, ClvpEncoder (+2) | ClvpForCausalLM, ClvpModelForConditionalGeneration | conditional-generation, text-generation |  |
+| 200 | splinter | text | encoder_only | PT | 2 | 1 | 126.8K | 2 | SplinterEncoder, SplinterPreTrainedModel, SplinterModel | SplinterForQuestionAnswering, SplinterForPreTraining | pretraining, question-answering |  |
+| 201 | rembert | text | decoder_only | PT | 2 | 2 | 126.3K | 25 | RemBertEncoder, RemBertPreTrainedModel, RemBertModel | RemBertForMaskedLM, RemBertForCausalLM, RemBertForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification |  |
+| 202 | perceiver | multimodal | multimodal | PT | 5 | 1 | 126.2K | 61 | PerceiverEncoder, PerceiverPreTrainedModel, PerceiverModel (+8) | PerceiverForMaskedLM, PerceiverForSequenceClassification, PerceiverForImageClassificationLearned (+4) | ForImageClassificationConvProcessing, ForImageClassificationFourier, ForImageClassificationLearned, ForMultimodalAutoencoding, ForOpticalFlow, fill-mask, text-classification |  |
+| 203 | video_llama_3 | vision | encoder_decoder | PT | 1 | 1 | 124.7K | — | VideoLlama3VisionEncoder, VideoLlama3PreTrainedModel, VideoLlama3VisionModel (+1) | VideoLlama3ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 204 | convnextv2 | vision | vision_encoder | PT | 20 | 5 | 122.7K | 64 | ConvNextV2PreTrainedModel, ConvNextV2Encoder, ConvNextV2Model | ConvNextV2ForImageClassification | image-classification |  |
+| 205 | gpt_neox_japanese | text | decoder_only | PT | 2 | 2 | 121.7K | 58 | GPTNeoXJapanesePreTrainedModel, GPTNeoXJapaneseModel | GPTNeoXJapaneseForCausalLM | text-generation |  |
+| 206 | kosmos2_5 | multimodal | multimodal | PT | 2 | 1 | 120.1K | 296 | Kosmos2_5PreTrainedModel, Kosmos2_5VisionEncoder, Kosmos2_5VisionModel (+2) | Kosmos2_5TextForCausalLM, Kosmos2_5ForConditionalGeneration | conditional-generation, text-generation |  |
+| 207 | ernie4_5_moe | text | decoder_only | PT | 8 | 3 | 115.5K | 1.1K | Ernie4_5_MoePreTrainedModel, Ernie4_5_MoeModel | Ernie4_5_MoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 208 | seamless_m4t | multimodal | multimodal | PT | 2 | 1 | 113.1K | 94 | SeamlessM4TConformerEncoder, SeamlessM4TPreTrainedModel, SeamlessM4TSpeechEncoder (+4) | SeamlessM4TTextToUnitForConditionalGeneration, SeamlessM4TForTextToText, SeamlessM4TForSpeechToText (+2) | ForSpeechToSpeech, ForSpeechToText, ForTextToSpeech, ForTextToText, conditional-generation |  |
+| 209 | fastspeech2_conformer | multimodal | multimodal | PT | 5 | 3 | 112.4K | 34 | FastSpeech2ConformerEncoder, FastSpeech2ConformerPreTrainedModel, FastSpeech2ConformerModel | — | — |  |
+| 210 | tapas | text | encoder_only | PT | 17 | 4 | 111.8K | 431 | TapasEncoder, TapasPreTrainedModel, TapasModel | TapasForMaskedLM, TapasForQuestionAnswering, TapasForSequenceClassification | fill-mask, question-answering, text-classification |  |
+| 211 | zamba2 | text | decoder_only | PT | 9 | 2 | 109.2K | 294 | Zamba2PreTrainedModel, Zamba2Model | Zamba2ForCausalLM, Zamba2ForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 212 | vilt | vision | vision_encoder | PT | 4 | 1 | 108.9K | 436 | ViltEncoder, ViltPreTrainedModel, ViltModel | ViltForMaskedLM, ViltForQuestionAnswering, ViltForImageAndTextRetrieval (+2) | ForImageAndTextRetrieval, ForImagesAndTextClassification, fill-mask, question-answering, token-classification |  |
+| 213 | t5gemma2 | text | encoder_decoder | PT | 6 | 2 | 106.7K | 406 | T5Gemma2PreTrainedModel, T5Gemma2TextEncoder, T5Gemma2Encoder (+2) | T5Gemma2ForConditionalGeneration, T5Gemma2ForSequenceClassification, T5Gemma2ForTokenClassification | conditional-generation, text-classification, token-classification | Has modular file; modeling files are auto-generated |
+| 214 | llava_next_video | multimodal | multimodal | PT | 4 | 1 | 103.8K | 153 | LlavaNextVideoPreTrainedModel, LlavaNextVideoModel | LlavaNextVideoForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 215 | udop | text | encoder_decoder | PT | 1 | 1 | 102.9K | 122 | UdopPreTrainedModel, UdopModel, UdopEncoderModel | UdopForConditionalGeneration | conditional-generation |  |
+| 216 | colqwen2 | text | unknown | PT | 1 | 1 | 101.0K | 23 | ColQwen2PreTrainedModel | ColQwen2ForRetrieval | ForRetrieval | Has modular file; modeling files are auto-generated |
+| 217 | stablelm | text | decoder_only | PT | 29 | 14 | 100.2K | 2.5K | StableLmPreTrainedModel, StableLmModel | StableLmForCausalLM, StableLmForSequenceClassification, StableLmForTokenClassification | text-classification, text-generation, token-classification |  |
+| 218 | seamless_m4t_v2 | multimodal | multimodal | PT | 3 | 3 | 98.5K | 988 | SeamlessM4Tv2ConformerEncoder, SeamlessM4Tv2PreTrainedModel, SeamlessM4Tv2SpeechEncoder (+5) | SeamlessM4Tv2TextToUnitForConditionalGeneration, SeamlessM4Tv2ForTextToText, SeamlessM4Tv2ForSpeechToText (+2) | ForSpeechToSpeech, ForSpeechToText, ForTextToSpeech, ForTextToText, conditional-generation |  |
+| 219 | mobilenet_v2 | vision | vision_encoder | PT | 14 | 10 | 97.7K | 119 | MobileNetV2PreTrainedModel, MobileNetV2Model | MobileNetV2ForImageClassification, MobileNetV2ForSemanticSegmentation | image-classification, semantic-segmentation |  |
+| 220 | chameleon | multimodal | multimodal | PT | 4 | 3 | 89.1K | 251 | ChameleonVQVAEEncoder, ChameleonPreTrainedModel, ChameleonModel | ChameleonForConditionalGeneration | conditional-generation |  |
+| 221 | deit | vision | vision_encoder | PT | 5 | 2 | 85.8K | 57 | DeiTEncoder, DeiTPreTrainedModel, DeiTModel | DeiTForMaskedImageModeling, DeiTForImageClassification, DeiTForImageClassificationWithTeacher | ForImageClassificationWithTeacher, image-classification, masked-image-modeling |  |
+| 222 | moonshine | text | encoder_decoder | PT | 14 | 1 | 85.3K | 105 | MoonshinePreTrainedModel, MoonshineEncoder, MoonshineDecoder (+1) | MoonshineForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 223 | aya_vision | text | encoder_decoder | PT | 3 | 2 | 83.5K | 542 | AyaVisionPreTrainedModel, AyaVisionModel | AyaVisionForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 224 | solar_open | text | decoder_only | PT | 5 | 3 | 79.6K | 544 | SolarOpenPreTrainedModel, SolarOpenModel | SolarOpenForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 225 | efficientnet | vision | vision_encoder | PT | 15 | 6 | 75.5K | 140 | EfficientNetEncoder, EfficientNetPreTrainedModel, EfficientNetModel | EfficientNetForImageClassification | image-classification |  |
+| 226 | falcon_h1 | text | decoder_only | PT | 24 | 4 | 75.4K | 591 | FalconH1PreTrainedModel, FalconH1Model | FalconH1ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 227 | fuyu | multimodal | multimodal | PT | 2 | 2 | 75.4K | 1.0K | FuyuPreTrainedModel, FuyuModel | FuyuForCausalLM | text-generation |  |
+| 228 | bark | audio | speech | PT | 3 | 2 | 69.0K | 1.8K | BarkPreTrainedModel, BarkCausalModel, BarkSemanticModel (+3) | — | — |  |
+| 229 | metaclip_2 | multimodal | multimodal | PT | 14 | 1 | 66.7K | 88 | MetaClip2PreTrainedModel, MetaClip2Encoder, MetaClip2TextModel (+2) | MetaClip2ForImageClassification | image-classification | Has modular file; modeling files are auto-generated |
+| 230 | conditional_detr | vision | vision_encoder | PT | 6 | 6 | 62.9K | 54 | ConditionalDetrConvEncoder, ConditionalDetrPreTrainedModel, ConditionalDetrEncoder (+2) | ConditionalDetrForObjectDetection, ConditionalDetrForSegmentation | ForSegmentation, object-detection | Has modular file; modeling files are auto-generated |
+| 231 | convnext | vision | vision_encoder | PT | 18 | 3 | 62.7K | 96 | ConvNextPreTrainedModel, ConvNextEncoder, ConvNextModel | ConvNextForImageClassification | image-classification |  |
+| 232 | minimax | text | decoder_only | PT | 9 | 4 | 60.3K | 20 | MiniMaxPreTrainedModel, MiniMaxModel | MiniMaxForCausalLM, MiniMaxForSequenceClassification, MiniMaxForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 233 | cohere_asr | text | encoder_decoder | PT | 1 | 1 | 58.7K | 701 | CohereAsrPreTrainedModel, CohereAsrDecoder, CohereAsrModel | CohereAsrForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 234 | hunyuan_v1_dense | text | decoder_only | PT | 25 | 4 | 58.2K | 2.0K | HunYuanDenseV1PreTrainedModel, HunYuanDenseV1Model | HunYuanDenseV1ForCausalLM, HunYuanDenseV1ForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 235 | afmoe | text | decoder_only | PT | 19 | 4 | 57.6K | 584 | AfmoePreTrainedModel, AfmoeModel | AfmoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 236 | olmo | text | decoder_only | PT | 16 | 5 | 53.8K | 326 | OlmoPreTrainedModel, OlmoModel | OlmoForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 237 | lilt | text | encoder_only | PT | 14 | 5 | 51.4K | 68 | LiltEncoder, LiltPreTrainedModel, LiltModel | LiltForSequenceClassification, LiltForTokenClassification, LiltForQuestionAnswering | question-answering, text-classification, token-classification |  |
+| 238 | timesformer | text | unknown | PT | 8 | 2 | 48.9K | 69 | TimesformerEncoder, TimesformerPreTrainedModel, TimesformerModel | TimesformerForVideoClassification | video-classification |  |
+| 239 | led | text | encoder_decoder | PT | 12 | 5 | 48.2K | 359 | LEDPreTrainedModel, LEDEncoder, LEDDecoder (+1) | LEDForConditionalGeneration, LEDForQuestionAnswering | conditional-generation, question-answering |  |
+| 240 | bros | text | encoder_only | PT | 3 | 2 | 48.1K | 28 | BrosPreTrainedModel, BrosEncoder, BrosModel | BrosForTokenClassification, BrosSpadeEEForTokenClassification, BrosSpadeELForTokenClassification | token-classification |  |
+| 241 | nemotron | text | decoder_only | PT | 7 | 5 | 48.0K | 387 | NemotronPreTrainedModel, NemotronModel | NemotronForCausalLM, NemotronForSequenceClassification, NemotronForQuestionAnswering (+1) | question-answering, text-classification, text-generation, token-classification |  |
+| 242 | cohere2_vision | vision | encoder_decoder | PT | 1 | 1 | 46.8K | 86 | Cohere2VisionPreTrainedModel, Cohere2VisionModel | Cohere2VisionForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 243 | longt5 | text | encoder_decoder | PT | 9 | 6 | 45.2K | 277 | LongT5PreTrainedModel, LongT5Model, LongT5EncoderModel | LongT5ForConditionalGeneration | conditional-generation |  |
+| 244 | jamba | text | decoder_only | PT | 36 | 4 | 43.3K | 1.9K | JambaPreTrainedModel, JambaModel | JambaForCausalLM, JambaForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 245 | olmo_hybrid | text | decoder_only | PT | 5 | 2 | 42.8K | 97 | OlmoHybridPreTrainedModel, OlmoHybridModel | OlmoHybridForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 246 | bigbird_pegasus | text | encoder_decoder | PT | 5 | 3 | 42.5K | 152 | BigBirdPegasusPreTrainedModel, BigBirdPegasusEncoder, BigBirdPegasusDecoder (+1) | BigBirdPegasusForConditionalGeneration, BigBirdPegasusForSequenceClassification, BigBirdPegasusForQuestionAnswering (+1) | conditional-generation, question-answering, text-classification, text-generation |  |
+| 247 | deformable_detr | vision | vision_encoder | PT | 8 | 5 | 41.8K | 86 | DeformableDetrConvEncoder, DeformableDetrPreTrainedModel, DeformableDetrEncoder (+2) | DeformableDetrForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 248 | vivit | vision | vision_encoder | PT | 3 | 2 | 40.2K | 49 | VivitEncoder, VivitPreTrainedModel, VivitModel | VivitForVideoClassification | video-classification |  |
+| 249 | megatron_bert | text | decoder_only | PT | 12 | 4 | 39.1K | 188 | MegatronBertEncoder, MegatronBertPreTrainedModel, MegatronBertModel | MegatronBertForPreTraining, MegatronBertForCausalLM, MegatronBertForMaskedLM (+5) | fill-mask, multiple-choice, next-sentence-prediction, pretraining, question-answering, text-classification, text-generation, token-classification |  |
+| 250 | colpali | multimodal | multimodal | PT | 3 | 2 | 39.1K | 35 | ColPaliPreTrainedModel | ColPaliForRetrieval | ForRetrieval | Has modular file; modeling files are auto-generated |
+| 251 | glm4 | text | decoder_only | PT | 20 | 7 | 38.4K | 1.1K | Glm4PreTrainedModel, Glm4Model | Glm4ForCausalLM, Glm4ForSequenceClassification, Glm4ForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 252 | glm | text | decoder_only | PT | 5 | 2 | 38.1K | 104 | GlmPreTrainedModel, GlmModel | GlmForCausalLM, GlmForSequenceClassification, GlmForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 253 | dbrx | text | decoder_only | PT | 7 | 6 | 36.4K | 52 | DbrxPreTrainedModel, DbrxModel | DbrxForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 254 | arcee | text | decoder_only | PT | 4 | 3 | 34.7K | 128 | ArceePreTrainedModel, ArceeModel | ArceeForCausalLM, ArceeForSequenceClassification, ArceeForQuestionAnswering (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 255 | xlm_roberta_xl | text | decoder_only | PT | 4 | 3 | 34.1K | 51 | XLMRobertaXLEncoder, XLMRobertaXLPreTrainedModel, XLMRobertaXLModel | XLMRobertaXLForCausalLM, XLMRobertaXLForMaskedLM, XLMRobertaXLForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 256 | swin2sr | vision | vision_encoder | PT | 5 | 1 | 31.1K | 85 | Swin2SREncoder, Swin2SRPreTrainedModel, Swin2SRModel | Swin2SRForImageSuperResolution | ForImageSuperResolution |  |
+| 257 | sew_d | audio | speech | PT | 3 | 2 | 31.0K | 5 | SEWDFeatureEncoder, SEWDTransformerEncoder, SEWDEncoder (+2) | SEWDForCTC, SEWDForSequenceClassification | ctc-speech-recognition, text-classification |  |
+| 258 | git | multimodal | multimodal | PT | 13 | 2 | 30.0K | 344 | GitEncoder, GitPreTrainedModel, GitVisionEncoder (+2) | GitForCausalLM | text-generation |  |
+| 259 | pix2struct | multimodal | multimodal | PT | 18 | 4 | 29.8K | 715 | Pix2StructVisionEncoder, Pix2StructPreTrainedModel, Pix2StructVisionModel (+1) | Pix2StructForConditionalGeneration | conditional-generation |  |
+| 260 | sew | audio | speech | PT | 2 | 1 | 29.3K | 3 | SEWFeatureEncoder, SEWEncoder, SEWPreTrainedModel (+1) | SEWForCTC, SEWForSequenceClassification | ctc-speech-recognition, text-classification | Has modular file; modeling files are auto-generated |
+| 261 | unispeech | audio | speech | PT | 2 | 2 | 29.1K | 1 | UniSpeechFeatureEncoder, UniSpeechEncoder, UniSpeechPreTrainedModel (+1) | UniSpeechForPreTraining, UniSpeechForCTC, UniSpeechForSequenceClassification | ctc-speech-recognition, pretraining, text-classification | Has modular file; modeling files are auto-generated |
+| 262 | got_ocr2 | vision | encoder_decoder | PT | 1 | 1 | 28.6K | 227 | GotOcr2PreTrainedModel, GotOcr2VisionEncoder, GotOcr2Model | GotOcr2ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 263 | upernet | vision | vision_encoder | PT | 9 | 1 | 28.5K | 52 | UperNetPreTrainedModel | UperNetForSemanticSegmentation | semantic-segmentation |  |
+| 264 | squeezebert | text | encoder_only | PT | 3 | 2 | 28.5K | 3 | SqueezeBertEncoder, SqueezeBertPreTrainedModel, SqueezeBertModel | SqueezeBertForMaskedLM, SqueezeBertForSequenceClassification, SqueezeBertForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 265 | exaone_moe | text | decoder_only | PT | 2 | 1 | 27.9K | 565 | ExaoneMoePreTrainedModel, ExaoneMoeModel | ExaoneMoeForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 266 | bitnet | vision | decoder_only | PT | 3 | 2 | 24.3K | 1.4K | BitNetPreTrainedModel, BitNetModel | BitNetForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 267 | hunyuan_v1_moe | text | decoder_only | PT | 1 | 1 | 22.7K | 616 | HunYuanMoEV1PreTrainedModel, HunYuanMoEV1Model | HunYuanMoEV1ForCausalLM, HunYuanMoEV1ForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 268 | eomt | multimodal | multimodal | PT | 6 | 1 | 22.3K | 24 | EomtPreTrainedModel | EomtForUniversalSegmentation | universal-segmentation | Has modular file; modeling files are auto-generated |
+| 269 | instructblip | multimodal | multimodal | PT | 4 | 1 | 22.2K | 193 | InstructBlipPreTrainedModel, InstructBlipEncoder, InstructBlipVisionModel (+3) | InstructBlipForConditionalGeneration | conditional-generation |  |
+| 270 | depth_pro | vision | vision_encoder | PT | 2 | 2 | 21.7K | 91 | DepthProPatchEncoder, DepthProImageEncoder, DepthProEncoder (+4) | DepthProForDepthEstimation | depth-estimation |  |
+| 271 | seggpt | vision | encoder_decoder | PT | 1 | 1 | 21.7K | 5 | SegGptEncoder, SegGptDecoder, SegGptPreTrainedModel (+1) | SegGptForImageSegmentation | image-segmentation |  |
+| 272 | flava | vision | vision_encoder | PT | 1 | 1 | 20.2K | 43 | FlavaEncoder, FlavaPreTrainedModel, FlavaImageModel (+3) | FlavaForPreTraining | pretraining |  |
+| 273 | umt5 | text | encoder_decoder | PT | 6 | 3 | 19.9K | 47 | UMT5PreTrainedModel, UMT5Model, UMT5EncoderModel | UMT5ForConditionalGeneration, UMT5ForSequenceClassification, UMT5ForTokenClassification (+1) | conditional-generation, question-answering, text-classification, token-classification |  |
+| 274 | d_fine | multimodal | multimodal | PT | 14 | 2 | 19.6K | 54 | DFinePreTrainedModel, DFineHybridEncoder, DFineDecoder (+2) | DFineForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 275 | video_llava | multimodal | multimodal | PT | 1 | 1 | 19.0K | 50 | VideoLlavaPreTrainedModel, VideoLlavaModel | VideoLlavaForConditionalGeneration | conditional-generation |  |
+| 276 | moonshine_streaming | text | encoder_decoder | PT | 3 | 1 | 18.2K | 31 | MoonshineStreamingPreTrainedModel, MoonshineStreamingEncoder, MoonshineStreamingDecoder (+1) | MoonshineStreamingForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 277 | mpt | text | decoder_only | PT | 36 | 26 | 17.7K | 1.4K | MptPreTrainedModel, MptModel | MptForCausalLM, MptForSequenceClassification, MptForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification |  |
+| 278 | ernie4_5 | text | decoder_only | PT | 3 | 2 | 16.3K | 124 | Ernie4_5PreTrainedModel, Ernie4_5Model | Ernie4_5ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 279 | rag | text | unknown | PT | 4 | 1 | 16.0K | 249 | RagPreTrainedModel, RagModel | RagSequenceForGeneration, RagTokenForGeneration | ForGeneration |  |
+| 280 | informer | text | encoder_decoder | PT | 1 | 1 | 15.7K | 9 | InformerPreTrainedModel, InformerEncoder, InformerDecoder (+1) | InformerForPrediction | ForPrediction | Has modular file; modeling files are auto-generated |
+| 281 | rwkv | text | decoder_only | PT | 19 | 6 | 15.0K | 130 | RwkvPreTrainedModel, RwkvModel | RwkvForCausalLM | text-generation |  |
+| 282 | lasr | text | speech | PT | 1 | 1 | 14.6K | 297 | LasrPreTrainedModel, LasrEncoder | LasrForCTC | ctc-speech-recognition | Has modular file; modeling files are auto-generated |
+| 283 | xcodec | audio | speech | PT | 6 | 2 | 14.0K | 3 | SemanticEncoder, SemanticDecoder, XcodecPreTrainedModel (+1) | — | — |  |
+| 284 | data2vec | audio | speech | PT | 8 | 2 | 13.5K | 83 | Data2VecAudioFeatureEncoder, Data2VecAudioEncoder, Data2VecAudioPreTrainedModel (+7) | Data2VecAudioForCTC, Data2VecAudioForSequenceClassification, Data2VecAudioForAudioFrameClassification (+9) | ForXVector, audio-frame-classification, ctc-speech-recognition, fill-mask, image-classification, multiple-choice, question-answering, semantic-segmentation, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated; Unusually broad head coverage (12 task heads) |
+| 285 | recurrent_gemma | text | decoder_only | PT | 4 | 1 | 13.4K | 319 | RecurrentGemmaPreTrainedModel, RecurrentGemmaModel | RecurrentGemmaForCausalLM | text-generation |  |
+| 286 | encoder_decoder | text | encoder_decoder | PT | 25 | 14 | 12.9K | 203 | EncoderDecoderModel | — | — | Likely shared infrastructure or meta module, not a standalone architecture |
+| 287 | persimmon | text | decoder_only | PT | 3 | 2 | 12.1K | 70 | PersimmonPreTrainedModel, PersimmonModel | PersimmonForCausalLM, PersimmonForSequenceClassification, PersimmonForTokenClassification | text-classification, text-generation, token-classification |  |
+| 288 | align | multimodal | multimodal | PT | 1 | 1 | 11.7K | 31 | AlignVisionEncoder, AlignTextEncoder, AlignPreTrainedModel (+3) | — | — |  |
+| 289 | flex_olmo | text | decoder_only | PT | 6 | 2 | 11.6K | 61 | FlexOlmoPreTrainedModel, FlexOlmoModel | FlexOlmoForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 290 | doge | text | decoder_only | PT | 12 | 1 | 10.8K | 56 | DogePreTrainedModel, DogeModel | DogeForCausalLM, DogeForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 291 | xmod | text | decoder_only | PT | 5 | 3 | 10.7K | 47 | XmodEncoder, XmodPreTrainedModel, XmodModel | XmodForCausalLM, XmodForMaskedLM, XmodForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification |  |
+| 292 | timesfm2_5 | text | unknown | PT | 1 | 1 | 10.6K | 44 | TimesFm2_5PreTrainedModel, TimesFm2_5Model | TimesFm2_5OutputForPrediction, TimesFm2_5ModelForPrediction | ForPrediction | Has modular file; modeling files are auto-generated |
+| 293 | musicflamingo | multimodal | multimodal | PT | 3 | 2 | 10.6K | 123 | MusicFlamingoPreTrainedModel | MusicFlamingoForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 294 | musicgen_melody | audio | speech | PT | 6 | 2 | 9.5K | 363 | MusicgenMelodyPreTrainedModel, MusicgenMelodyDecoder, MusicgenMelodyModel | MusicgenMelodyForCausalLM, MusicgenMelodyForConditionalGeneration | conditional-generation, text-generation |  |
+| 295 | dots1 | text | decoder_only | PT | 2 | 1 | 9.5K | 241 | Dots1PreTrainedModel, Dots1Model | Dots1ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 296 | superglue | multimodal | multimodal | PT | 2 | 1 | 9.0K | 6 | SuperGlueKeypointEncoder, SuperGluePreTrainedModel | SuperGlueForKeypointMatching | ForKeypointMatching |  |
+| 297 | edgetam_video | text | encoder_decoder | PT | 1 | 1 | 8.7K | 72 | EdgeTamVideoMemoryEncoder, EdgeTamVideoPreTrainedModel, EdgeTamVideoPromptEncoder (+2) | — | — | Has modular file; modeling files are auto-generated |
+| 298 | idefics | multimodal | multimodal | PT | 4 | 1 | 8.7K | 412 | IdeficsPreTrainedModel, IdeficsModel | IdeficsForVisionText2Text | ForVisionText2Text |  |
+| 299 | kyutai_speech_to_text | audio | speech | PT | 2 | 1 | 8.3K | 21 | KyutaiSpeechToTextPreTrainedModel, KyutaiSpeechToTextModel | KyutaiSpeechToTextForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 300 | ibert | text | encoder_only | PT | 2 | 1 | 8.1K | 1 | IBertEncoder, IBertPreTrainedModel, IBertModel | IBertForMaskedLM, IBertForSequenceClassification, IBertForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 301 | cvt | vision | vision_encoder | PT | 5 | 1 | 8.0K | 22 | CvtEncoder, CvtPreTrainedModel, CvtModel | CvtForImageClassification | image-classification |  |
+| 302 | ovis2 | vision | encoder_decoder | PT | 2 | 1 | 7.9K | — | Ovis2VisionEncoder, Ovis2PreTrainedModel, Ovis2VisionModel (+1) | Ovis2ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 303 | autoformer | text | encoder_decoder | PT | 1 | 1 | 7.8K | 10 | AutoformerPreTrainedModel, AutoformerEncoder, AutoformerDecoder (+1) | AutoformerForPrediction | ForPrediction |  |
+| 304 | maskformer | multimodal | multimodal | PT | 11 | 2 | 7.7K | 140 | MaskFormerDetrPreTrainedModel, MaskFormerDetrDecoder, MaskFormerFPNModel (+6) | MaskFormerForInstanceSegmentation | instance-segmentation | Has modular file; modeling files are auto-generated |
+| 305 | patchtst | text | unknown | PT | 6 | 3 | 7.7K | 23 | PatchTSTPreTrainedModel, PatchTSTEncoder, PatchTSTModel | PatchTSTForPretraining, PatchTSTForClassification, PatchTSTForPrediction (+1) | ForClassification, ForPrediction, ForPretraining, ForRegression |  |
+| 306 | ijepa | vision | vision_encoder | PT | 4 | 1 | 7.4K | 20 | IJepaPreTrainedModel, IJepaEncoder, IJepaModel | IJepaForImageClassification | image-classification | Has modular file; modeling files are auto-generated |
+| 307 | jais2 | text | decoder_only | PT | 2 | 1 | 6.8K | 39 | Jais2PreTrainedModel, Jais2Model | Jais2ForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 308 | mamba2 | text | decoder_only | PT | 4 | 2 | 6.3K | — | Mamba2PreTrainedModel, Mamba2Model | Mamba2ForCausalLM | text-generation |  |
+| 309 | aimv2 | text | unknown | PT | 6 | 1 | 6.2K | 97 | Aimv2Encoder, Aimv2PreTrainedModel, Aimv2VisionModel (+2) | — | — | Has modular file; modeling files are auto-generated |
+| 310 | higgs_audio_v2_tokenizer | audio | speech | PT | 1 | 1 | 6.1K | — | SemanticEncoder, SemanticDecoder | — | — | Has modular file; modeling files are auto-generated |
+| 311 | mobilenet_v1 | vision | vision_encoder | PT | 2 | 1 | 5.6K | 3 | MobileNetV1PreTrainedModel, MobileNetV1Model | MobileNetV1ForImageClassification | image-classification |  |
+| 312 | efficientloftr | vision | vision_encoder | PT | 3 | 2 | 5.6K | 103 | EfficientLoFTRPreTrainedModel, EfficientLoFTRModel | EfficientLoFTRForKeypointMatching | ForKeypointMatching | Has modular file; modeling files are auto-generated |
+| 313 | sam_hq | vision | encoder_decoder | PT | 3 | 1 | 5.2K | 20 | SamHQPreTrainedModel, SamHQVisionEncoder, SamHQMaskDecoder (+3) | — | — | Has modular file; modeling files are auto-generated |
+| 314 | unispeech_sat | audio | speech | PT | 8 | 1 | 5.1K | 11 | UniSpeechSatFeatureEncoder, UniSpeechSatEncoder, UniSpeechSatPreTrainedModel (+1) | UniSpeechSatForPreTraining, UniSpeechSatForCTC, UniSpeechSatForSequenceClassification (+2) | ForXVector, audio-frame-classification, ctc-speech-recognition, pretraining, text-classification | Has modular file; modeling files are auto-generated |
+| 315 | switch_transformers | text | encoder_decoder | PT | 6 | 1 | 4.9K | 335 | SwitchTransformersPreTrainedModel, SwitchTransformersModel, SwitchTransformersEncoderModel | SwitchTransformersForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 316 | mobilevitv2 | vision | vision_encoder | PT | 4 | 3 | 4.6K | 14 | MobileViTV2Encoder, MobileViTV2PreTrainedModel, MobileViTV2Model | MobileViTV2ForImageClassification, MobileViTV2ForSemanticSegmentation | image-classification, semantic-segmentation |  |
+| 317 | vaultgemma | text | decoder_only | PT | 1 | 1 | 4.6K | 240 | VaultGemmaPreTrainedModel, VaultGemmaModel | VaultGemmaForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 318 | jetmoe | text | decoder_only | PT | 3 | 1 | 4.2K | 289 | JetMoePreTrainedModel, JetMoeModel | JetMoeForCausalLM, JetMoeForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 319 | shieldgemma2 | vision | vision_encoder | PT | 1 | 1 | 4.1K | 155 | — | ShieldGemma2ForImageClassification | image-classification |  |
+| 320 | youtu | text | decoder_only | PT | 2 | 1 | 4.0K | 269 | YoutuPreTrainedModel, YoutuModel | YoutuForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 321 | pvt_v2 | vision | vision_encoder | PT | 3 | 1 | 4.0K | 6 | PvtV2Encoder, PvtV2PreTrainedModel, PvtV2Model | PvtV2ForImageClassification | image-classification |  |
+| 322 | lw_detr | vision | vision_encoder | PT | 10 | 3 | 3.8K | — | LwDetrViTPreTrainedModel, LwDetrViTEncoder, LwDetrConvEncoder (+3) | LwDetrForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 323 | higgs_audio_v2 | audio | speech | PT | 2 | 1 | 3.8K | 2 | HiggsAudioV2PreTrainedModel, HiggsAudioV2Model | HiggsAudioV2ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 324 | eomt_dinov3 | multimodal | multimodal | PT | 6 | 1 | 3.6K | 1 | EomtDinov3PreTrainedModel | EomtDinov3ForUniversalSegmentation | universal-segmentation | Has modular file; modeling files are auto-generated |
+| 325 | zamba | text | decoder_only | PT | 1 | 1 | 3.5K | 29 | ZambaPreTrainedModel, ZambaModel | ZambaForCausalLM, ZambaForSequenceClassification | text-classification, text-generation |  |
+| 326 | levit | vision | vision_encoder | PT | 3 | 1 | 3.4K | 4 | LevitEncoder, LevitPreTrainedModel, LevitModel | LevitForImageClassification, LevitForImageClassificationWithTeacher | ForImageClassificationWithTeacher, image-classification |  |
+| 327 | dab_detr | vision | vision_encoder | PT | 1 | 1 | 3.1K | 2 | DabDetrConvEncoder, DabDetrConvModel, DabDetrPreTrainedModel (+3) | DabDetrForObjectDetection | object-detection |  |
+| 328 | pvt | vision | vision_encoder | PT | 2 | 2 | 3.1K | — | PvtEncoder, PvtPreTrainedModel, PvtModel | PvtForImageClassification | image-classification |  |
+| 329 | glpn | vision | vision_encoder | PT | 3 | 2 | 3.1K | 34 | GLPNEncoder, GLPNPreTrainedModel, GLPNModel (+1) | GLPNForDepthEstimation | depth-estimation |  |
+| 330 | regnet | vision | vision_encoder | PT | 6 | 1 | 2.7K | 3 | RegNetEncoder, RegNetPreTrainedModel, RegNetModel | RegNetForImageClassification | image-classification |  |
+| 331 | focalnet | vision | vision_encoder | PT | 3 | 1 | 2.6K | 1 | FocalNetEncoder, FocalNetPreTrainedModel, FocalNetModel | FocalNetForMaskedImageModeling, FocalNetForImageClassification | image-classification, masked-image-modeling |  |
+| 332 | fast_vlm | text | encoder_decoder | PT | 2 | 1 | 2.5K | — | FastVlmPreTrainedModel, FastVlmModel | FastVlmForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 333 | bit | vision | vision_encoder | PT | 1 | 1 | 2.5K | 5 | BitEncoder, BitPreTrainedModel, BitModel | BitForImageClassification | image-classification |  |
+| 334 | lxmert | text | encoder_only | PT | 2 | 1 | 2.4K | 5 | LxmertVisualFeatureEncoder, LxmertEncoder, LxmertPreTrainedModel (+1) | LxmertForPreTraining, LxmertForQuestionAnswering | pretraining, question-answering |  |
+| 335 | visual_bert | multimodal | multimodal | PT | 4 | 1 | 2.4K | 12 | VisualBertEncoder, VisualBertPreTrainedModel, VisualBertModel | VisualBertForPreTraining, VisualBertForMultipleChoice, VisualBertForQuestionAnswering (+2) | ForRegionToPhraseAlignment, ForVisualReasoning, multiple-choice, pretraining, question-answering |  |
+| 336 | mvp | text | encoder_decoder | PT | 3 | 2 | 2.4K | 36 | MvpPreTrainedModel, MvpEncoder, MvpDecoder (+1) | MvpForConditionalGeneration, MvpForSequenceClassification, MvpForQuestionAnswering (+1) | conditional-generation, question-answering, text-classification, text-generation |  |
+| 337 | decision_transformer | text | unknown | PT | 3 | 1 | 2.3K | 27 | DecisionTransformerGPT2PreTrainedModel, DecisionTransformerGPT2Model, DecisionTransformerPreTrainedModel (+1) | — | — |  |
+| 338 | time_series_transformer | text | encoder_decoder | PT | 2 | 2 | 2.3K | 31 | TimeSeriesTransformerPreTrainedModel, TimeSeriesTransformerEncoder, TimeSeriesTransformerDecoder (+1) | TimeSeriesTransformerForPrediction | ForPrediction |  |
+| 339 | swiftformer | vision | vision_encoder | PT | 2 | 1 | 2.3K | 9 | SwiftFormerConvEncoder, SwiftFormerEncoder, SwiftFormerPreTrainedModel (+1) | SwiftFormerForImageClassification | image-classification |  |
+| 340 | pegasus_x | text | encoder_decoder | PT | 7 | 5 | 2.2K | 72 | PegasusXPreTrainedModel, PegasusXEncoder, PegasusXDecoder (+1) | PegasusXForConditionalGeneration | conditional-generation |  |
+| 341 | groupvit | vision | vision_encoder | PT | 1 | 1 | 2.0K | 6 | GroupViTPreTrainedModel, GroupViTVisionEncoder, GroupViTTextEncoder (+3) | — | — |  |
+| 342 | speech_encoder_decoder | audio | speech | PT | 3 | 2 | 2.0K | 11 | SpeechEncoderDecoderModel | — | — |  |
+| 343 | modernbert_decoder | text | decoder_only | PT | 3 | 2 | 1.9K | 4 | ModernBertDecoderPreTrainedModel, ModernBertDecoderModel | ModernBertDecoderForCausalLM, ModernBertDecoderForSequenceClassification | text-classification, text-generation | Has modular file; modeling files are auto-generated |
+| 344 | imagegpt | vision | vision_encoder | PT | 3 | 1 | 1.9K | 80 | ImageGPTPreTrainedModel, ImageGPTModel | ImageGPTForCausalImageModeling, ImageGPTForImageClassification | ForCausalImageModeling, image-classification |  |
+| 345 | tvp | multimodal | multimodal | PT | 2 | 2 | 1.9K | 1 | TvpVisionModel, TvpEncoder, TvpPreTrainedModel (+1) | TvpForVideoGrounding | ForVideoGrounding |  |
+| 346 | deepseek_vl_hybrid | multimodal | multimodal | PT | 1 | 1 | 1.8K | 1 | DeepseekVLHybridPreTrainedModel, DeepseekVLHybridModel | DeepseekVLHybridForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 347 | roberta_prelayernorm | text | decoder_only | PT | 4 | 3 | 1.8K | 2 | RobertaPreLayerNormEncoder, RobertaPreLayerNormPreTrainedModel, RobertaPreLayerNormModel | RobertaPreLayerNormForCausalLM, RobertaPreLayerNormForMaskedLM, RobertaPreLayerNormForSequenceClassification (+3) | fill-mask, multiple-choice, question-answering, text-classification, text-generation, token-classification |  |
+| 348 | deepseek_vl | multimodal | multimodal | PT | 1 | 1 | 1.8K | 2 | DeepseekVLPreTrainedModel, DeepseekVLModel | DeepseekVLForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 349 | hiera | vision | vision_encoder | PT | 4 | 1 | 1.6K | 3 | HieraEncoder, HieraPreTrainedModel, HieraModel (+1) | HieraForPreTraining, HieraForImageClassification | image-classification, pretraining |  |
+| 350 | nanochat | text | decoder_only | PT | 4 | 4 | 1.5K | 2 | NanoChatPreTrainedModel, NanoChatModel | NanoChatForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 351 | yoso | text | encoder_only | PT | 1 | 1 | 1.4K | — | YosoEncoder, YosoPreTrainedModel, YosoModel | YosoForMaskedLM, YosoForSequenceClassification, YosoForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 352 | chmv2 | vision | vision_encoder | PT | 1 | 1 | 1.4K | 11 | CHMv2PreTrainedModel | CHMv2ForDepthEstimation | depth-estimation | Has modular file; modeling files are auto-generated |
+| 353 | poolformer | vision | vision_encoder | PT | 1 | 1 | 1.4K | 1 | PoolFormerEncoder, PoolFormerPreTrainedModel, PoolFormerModel | PoolFormerForImageClassification | image-classification |  |
+| 354 | patchtsmixer | text | unknown | PT | 3 | 2 | 1.3K | 25 | PatchTSMixerPreTrainedModel, PatchTSMixerEncoder, PatchTSMixerModel | PatchTSMixerForPredictionHead, PatchTSMixerForPretraining, PatchTSMixerForPrediction (+2) | ForPrediction, ForPredictionHead, ForPretraining, ForRegression, ForTimeSeriesClassification |  |
+| 355 | vipllava | multimodal | multimodal | PT | 1 | 1 | 1.3K | 16 | VipLlavaPreTrainedModel, VipLlavaModel | VipLlavaForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 356 | mra | text | encoder_only | PT | 2 | 1 | 1.3K | 1 | MraEncoder, MraPreTrainedModel, MraModel | MraForMaskedLM, MraForSequenceClassification, MraForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 357 | nystromformer | text | encoder_only | PT | 1 | 1 | 1.3K | 2 | NystromformerEncoder, NystromformerPreTrainedModel, NystromformerModel | NystromformerForMaskedLM, NystromformerForSequenceClassification, NystromformerForMultipleChoice (+2) | fill-mask, multiple-choice, question-answering, text-classification, token-classification |  |
+| 358 | jina_embeddings_v3 | text | encoder_only | PT | 1 | 1 | 1.2K | 2 | JinaEmbeddingsV3PreTrainedModel, JinaEmbeddingsV3Model | JinaEmbeddingsV3ForMaskedLM, JinaEmbeddingsV3ForSequenceClassification, JinaEmbeddingsV3ForTokenClassification (+1) | fill-mask, question-answering, text-classification, token-classification | Has modular file; modeling files are auto-generated |
+| 359 | univnet | text | unknown | PT | 1 | 1 | 1.2K | 1 | UnivNetModel | — | — |  |
+| 360 | textnet | vision | vision_encoder | PT | 2 | 1 | 1.2K | 7 | TextNetEncoder, TextNetPreTrainedModel, TextNetModel | TextNetForImageClassification | image-classification |  |
+| 361 | vit_msn | vision | vision_encoder | PT | 2 | 1 | 1.1K | 5 | ViTMSNEncoder, ViTMSNPreTrainedModel, ViTMSNModel | ViTMSNForImageClassification | image-classification |  |
+| 362 | ministral | text | decoder_only | PT | 3 | 3 | 1.0K | — | MinistralPreTrainedModel, MinistralModel | MinistralForCausalLM, MinistralForSequenceClassification, MinistralForTokenClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 363 | helium | text | decoder_only | PT | 1 | 1 | 1.0K | 144 | HeliumPreTrainedModel, HeliumModel | HeliumForCausalLM, HeliumForSequenceClassification, HeliumForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 364 | nllb_moe | text | encoder_decoder | PT | 1 | 1 | 954 | 123 | NllbMoePreTrainedModel, NllbMoeEncoder, NllbMoeDecoder (+1) | NllbMoeForConditionalGeneration | conditional-generation |  |
+| 365 | ministral3 | text | decoder_only | PT | 5 | 4 | 941 | — | Ministral3PreTrainedModel, Ministral3Model | Ministral3ForCausalLM, Ministral3ForTokenClassification, Ministral3ForSequenceClassification (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 366 | cpmant | text | decoder_only | PT | 1 | 1 | 903 | 23 | CpmAntEncoder, CpmAntPreTrainedModel, CpmAntModel | CpmAntForCausalLM | text-generation |  |
+| 367 | vision_text_dual_encoder | text | unknown | PT | 4 | 4 | 901 | 21 | VisionTextDualEncoderModel | — | — |  |
+| 368 | vibevoice_acoustic_tokenizer | text | encoder_decoder | PT | 2 | 2 | 815 | 13 | — | — | — | Has modular file; modeling files are auto-generated |
+| 369 | paddleocr_vl | vision | encoder_decoder | PT | 3 | 3 | 604 | 6 | PaddleOCRVLPreTrainedModel, PaddleOCRTextModel, PaddleOCRVisionEncoder (+2) | PaddleOCRVLForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 370 | pixio | text | unknown | PT | 2 | 2 | 569 | 12 | PixioPreTrainedModel, PixioEncoder, PixioModel | — | — | Has modular file; modeling files are auto-generated |
+| 371 | videomt | multimodal | multimodal | PT | 1 | 1 | 548 | — | VideomtPreTrainedModel | VideomtForUniversalSegmentation | universal-segmentation | Has modular file; modeling files are auto-generated |
+| 372 | voxtral_realtime | multimodal | multimodal | PT | 1 | 1 | 485 | — | VoxtralRealtimePreTrainedModel, VoxtralRealtimeEncoder, VoxtralRealtimeTextPreTrainedModel (+1) | VoxtralRealtimeTextForCausalLM, VoxtralRealtimeForConditionalGeneration | conditional-generation, text-generation | Has modular file; modeling files are auto-generated |
+| 373 | hgnet_v2 | vision | vision_encoder | PT | 1 | 1 | 464 | — | HGNetV2PreTrainedModel, HGNetV2Encoder | HGNetV2ForImageClassification | image-classification | Has modular file; modeling files are auto-generated |
+| 374 | pixtral | multimodal | multimodal | PT | 3 | 1 | 432 | 17 | PixtralPreTrainedModel, PixtralVisionModel | — | — |  |
+| 375 | voxtral | audio | speech | PT | 2 | 2 | 387 | 1 | VoxtralPreTrainedModel, VoxtralEncoder | VoxtralForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 376 | mistral4 | text | decoder_only | PT | 1 | 1 | 324 | 1 | Mistral4PreTrainedModel, Mistral4Model | Mistral4ForCausalLM, Mistral4ForSequenceClassification, Mistral4ForTokenClassification | text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 377 | diffllama | text | decoder_only | PT | 1 | 1 | 240 | — | DiffLlamaPreTrainedModel, DiffLlamaModel | DiffLlamaForCausalLM, DiffLlamaForSequenceClassification, DiffLlamaForQuestionAnswering (+1) | question-answering, text-classification, text-generation, token-classification | Has modular file; modeling files are auto-generated |
+| 378 | pop2piano | text | encoder_decoder | PT | 1 | 1 | 136 | 1 | Pop2PianoPreTrainedModel | Pop2PianoForConditionalGeneration | conditional-generation |  |
+| 379 | xlstm | text | decoder_only | PT | 1 | 1 | 108 | 3 | xLSTMPreTrainedModel, xLSTMModel | xLSTMForCausalLM | text-generation |  |
+| 380 | dinat | vision | vision_encoder | PT | 1 | 1 | 107 | 1 | DinatEncoder, DinatPreTrainedModel, DinatModel | DinatForImageClassification | image-classification |  |
+| 381 | lighton_ocr | text | encoder_decoder | PT | 1 | 1 | 105 | — | LightOnOcrPreTrainedModel, LightOnOcrModel | LightOnOcrForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 382 | sam2 | vision | encoder_decoder | PT | 1 | 1 | 96 | 1 | Sam2PreTrainedModel, Sam2HieraDetModel, Sam2VisionModel (+3) | — | — | Has modular file; modeling files are auto-generated |
+| 383 | perception_lm | vision | encoder_decoder | PT | 1 | 1 | 78 | 1 | PerceptionLMPreTrainedModel, PerceptionLMModel | PerceptionLMForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 384 | auto | multimodal | multimodal | PT | — | — | — | — | AutoModel | AutoModelForMaskGeneration, AutoModelForKeypointDetection, AutoModelForKeypointMatching (+38) | ForAudioTokenization, ForImageTextToText, ForKeypointDetection, ForKeypointMatching, ForMaskGeneration, ForMultimodalLM, ForTableQuestionAnswering, ForTableRecognition, ForTextRecognition, ForTextToSpectrogram, ForTimeSeriesPrediction, audio-classification, audio-frame-classification, audio-xvector, automatic-speech-recognition, ctc-speech-recognition, depth-estimation, document-question-answering, fill-mask, image-classification, image-segmentation, image-to-image, instance-segmentation, masked-image-modeling, multiple-choice, next-sentence-prediction, object-detection, pretraining, question-answering, semantic-segmentation, text-classification, text-encoding, text-generation, text-to-waveform, text2text-generation, token-classification, universal-segmentation, video-classification, visual-question-answering, zero-shot-image-classification, zero-shot-object-detection | Likely shared infrastructure or meta module, not a standalone architecture; Unusually broad head coverage (41 task heads) |
+| 385 | barthez | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 386 | bartpho | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 387 | bert_japanese | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 388 | bertweet | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 389 | blt | text | decoder_only | PT | — | — | — | — | BltPreTrainedModel, BltLocalEncoder, BltLocalDecoder (+1) | BltForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 390 | bridgetower | multimodal | multimodal | PT | — | — | — | — | BridgeTowerTextEncoder, BridgeTowerPreTrainedModel, BridgeTowerVisionModel (+2) | BridgeTowerForMaskedLM, BridgeTowerForImageAndTextRetrieval, BridgeTowerForContrastiveLearning | ForContrastiveLearning, ForImageAndTextRetrieval, fill-mask |  |
+| 391 | byt5 | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 392 | code_llama | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 393 | colmodernvbert | text | unknown | PT | — | — | — | — | ColModernVBertPreTrainedModel | ColModernVBertForRetrieval | ForRetrieval | Has modular file; modeling files are auto-generated |
+| 394 | cpm | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 395 | cwm | text | decoder_only | PT | — | — | — | — | CwmPreTrainedModel, CwmModel | CwmForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 396 | deprecated | unknown | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; Likely deprecated/legacy; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 397 | dia | audio | speech | PT | — | — | — | — | DiaPreTrainedModel, DiaEncoder, DiaDecoder (+1) | DiaForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 398 | dialogpt | unknown | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 399 | dit | unknown | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 400 | donut | vision | vision_encoder | PT | — | — | — | — | DonutSwinEncoder, DonutSwinPreTrainedModel, DonutSwinModel | DonutSwinForImageClassification | image-classification |  |
+| 401 | edgetam | text | encoder_decoder | PT | — | — | — | — | EdgeTamPreTrainedModel, EdgeTamVisionModel, EdgeTamPromptEncoder (+2) | — | — | Has modular file; modeling files are auto-generated |
+| 402 | emu3 | multimodal | multimodal | PT | — | — | — | — | Emu3VQVAEEncoder, Emu3VQVAEDecoder, Emu3PreTrainedModel (+2) | Emu3ForCausalLM, Emu3ForConditionalGeneration | conditional-generation, text-generation | Has modular file; modeling files are auto-generated |
+| 403 | ernie4_5_vl_moe | multimodal | multimodal | PT | — | — | — | — | Ernie4_5_VLMoePreTrainedModel, Ernie4_5_VLMoeTextModel, Ernie4_5_VLMoeVisionTransformerPretrainedModel (+7) | Ernie4_5_VLMoeForConditionalGeneration, Ernie4_5_VL_MoeForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 404 | evolla | multimodal | multimodal | PT | — | — | — | — | EvollaSaProtEncoder, EvollaSaProtPreTrainedModel, EvollaSaProtProteinEncoder (+3) | EvollaForProteinText2Text | ForProteinText2Text | Has modular file; modeling files are auto-generated |
+| 405 | glm46v | vision | encoder_decoder | PT | — | — | — | — | Glm46VPreTrainedModel, Glm46VModel | Glm46VForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 406 | glm_image | vision | encoder_decoder | PT | — | — | — | — | GlmImagePreTrainedModel, GlmImageVisionModel, GlmImageTextModel (+1) | GlmImageForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 407 | gpt_sw3 | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 408 | granitemoeshared | text | decoder_only | PT | — | — | — | — | GraniteMoeSharedPreTrainedModel, GraniteMoeSharedModel | GraniteMoeSharedForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 409 | herbert | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 410 | instructblipvideo | multimodal | multimodal | PT | — | — | — | — | InstructBlipVideoPreTrainedModel, InstructBlipVideoEncoder, InstructBlipVideoVisionModel (+3) | InstructBlipVideoForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 411 | layoutxlm | text | unknown | — | — | — | — | — | — | — | — | Has modular file; modeling files are auto-generated; Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 412 | longcat_flash | text | decoder_only | PT | — | — | — | — | LongcatFlashPreTrainedModel, LongcatFlashModel | LongcatFlashForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 413 | mbart50 | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 414 | megatron_gpt2 | unknown | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 415 | mlcd | text | unknown | PT | — | — | — | — | MLCDEncoder, MLCDPreTrainedModel, MLCDVisionModel | — | — | Has modular file; modeling files are auto-generated |
+| 416 | mluke | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 417 | modernvbert | text | encoder_only | PT | — | — | — | — | ModernVBertPreTrainedModel, ModernVBertModel | ModernVBertForMaskedLM, ModernVBertForSequenceClassification, ModernVBertForTokenClassification | fill-mask, text-classification, token-classification | Has modular file; modeling files are auto-generated |
+| 418 | musicgen | audio | speech | PT | — | — | — | — | MusicgenPreTrainedModel, MusicgenDecoder, MusicgenModel | MusicgenForCausalLM, MusicgenForConditionalGeneration | conditional-generation, text-generation |  |
+| 419 | myt5 | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 420 | nllb | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 421 | nougat | multimodal | multimodal | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 422 | omdet_turbo | vision | vision_encoder | PT | — | — | — | — | OmDetTurboEncoder, OmDetTurboHybridEncoder, OmDetTurboTaskEncoder (+2) | OmDetTurboForObjectDetection | object-detection |  |
+| 423 | pe_audio | audio | speech | PT | — | — | — | — | PeAudioDacEncoder, PeAudioPreTrainedModel, PeAudioEncoder (+2) | — | — | Has modular file; modeling files are auto-generated |
+| 424 | pe_audio_video | audio | speech | PT | — | — | — | — | PeAudioVideoPreTrainedModel, PeAudioVideoEncoder, PeAudioVideoModel | — | — | Has modular file; modeling files are auto-generated |
+| 425 | pe_video | text | unknown | PT | — | — | — | — | PeVideoPreTrainedModel, PeVideoEncoder, PeVideoModel | — | — | Has modular file; modeling files are auto-generated |
+| 426 | phi4_multimodal | multimodal | multimodal | PT | — | — | — | — | Phi4MultimodalVisionEncoder, Phi4MultimodalVisionPreTrainedModel, Phi4MultimodalVisionModel (+4) | Phi4MultimodalForCausalLM | text-generation | Has modular file; modeling files are auto-generated |
+| 427 | phobert | text | unknown | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 428 | pi0 | vision | encoder_decoder | PT | — | — | — | — | PI0PreTrainedModel, PI0Model | PI0ForConditionalGeneration | conditional-generation | Has modular file; modeling files are auto-generated |
+| 429 | pp_chart2table | vision | vision_encoder | — | — | — | — | — | — | — | — | Has modular file; modeling files are auto-generated; Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 430 | pp_doclayout_v2 | vision | vision_encoder | PT | — | — | — | — | PPDocLayoutV2ReadingOrderEncoder, PPDocLayoutV2PreTrainedModel, PPDocLayoutV2ConvEncoder (+3) | PPDocLayoutV2ForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 431 | pp_lcnet | vision | vision_encoder | PT | — | — | — | — | PPLCNetPreTrainedModel, PPLCNetEncoder | PPLCNetForImageClassification | image-classification | Has modular file; modeling files are auto-generated |
+| 432 | pp_lcnet_v3 | text | unknown | PT | — | — | — | — | PPLCNetV3PreTrainedModel, PPLCNetV3Encoder | — | — | Has modular file; modeling files are auto-generated |
+| 433 | pp_ocrv5_mobile_det | vision | vision_encoder | PT | — | — | — | — | PPOCRV5MobileDetPreTrainedModel, PPOCRV5MobileDetModel | PPOCRV5MobileDetForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 434 | pp_ocrv5_mobile_rec | text | unknown | PT | — | — | — | — | PPOCRV5MobileRecPreTrainedModel, PPOCRV5MobileRecModel | PPOCRV5MobileRecForTextRecognition | ForTextRecognition | Has modular file; modeling files are auto-generated |
+| 435 | pp_ocrv5_server_det | vision | vision_encoder | PT | — | — | — | — | PPOCRV5ServerDetPreTrainedModel, PPOCRV5ServerDetModel | PPOCRV5ServerDetForObjectDetection | object-detection | Has modular file; modeling files are auto-generated |
+| 436 | pp_ocrv5_server_rec | vision | vision_encoder | PT | — | — | — | — | PPOCRV5ServerRecPreTrainedModel, PPOCRV5ServerRecModel | PPOCRV5ServerRecForTextRecognition | ForTextRecognition | Has modular file; modeling files are auto-generated |
+| 437 | prompt_depth_anything | vision | vision_encoder | PT | — | — | — | — | PromptDepthAnythingPreTrainedModel | PromptDepthAnythingForDepthEstimation | depth-estimation | Has modular file; modeling files are auto-generated |
+| 438 | sam3 | vision | encoder_decoder | PT | — | — | — | — | Sam3PreTrainedModel, Sam3ViTModel, Sam3VisionModel (+6) | — | — | Has modular file; modeling files are auto-generated |
+| 439 | sam3_tracker | vision | encoder_decoder | PT | — | — | — | — | Sam3TrackerPreTrainedModel, Sam3TrackerPromptEncoder, Sam3TrackerMaskDecoder (+1) | — | — | Has modular file; modeling files are auto-generated |
+| 440 | sam3_tracker_video | vision | encoder_decoder | PT | — | — | — | — | Sam3TrackerVideoPreTrainedModel, Sam3TrackerVideoMemoryEncoder, Sam3TrackerVideoPromptEncoder (+2) | — | — | Has modular file; modeling files are auto-generated |
+| 441 | slanext | vision | vision_encoder | PT | — | — | — | — | SLANeXtPreTrainedModel, SLANeXtVisionEncoder | SLANeXtForTableRecognition | ForTableRecognition | Has modular file; modeling files are auto-generated |
+| 442 | timesfm | text | unknown | PT | — | — | — | — | TimesFmPreTrainedModel, TimesFmModel | TimesFmOutputForPrediction, TimesFmModelForPrediction | ForPrediction | Has modular file; modeling files are auto-generated |
+| 443 | timm_backbone | text | unknown | PT | — | — | — | — | — | — | — |  |
+| 444 | trocr | text | decoder_only | PT | — | — | — | — | TrOCRPreTrainedModel, TrOCRDecoder | TrOCRForCausalLM | text-generation |  |
+| 445 | uvdoc | vision | vision_encoder | PT | — | — | — | — | UVDocPreTrainedModel, UVDocModel | — | — | Has modular file; modeling files are auto-generated |
+| 446 | vitdet | vision | vision_encoder | PT | — | — | — | — | VitDetEncoder, VitDetPreTrainedModel, VitDetModel | — | — |  |
+| 447 | vitpose_backbone | vision | vision_encoder | PT | — | — | — | — | VitPoseBackbonePreTrainedModel, VitPoseBackboneEncoder | — | — |  |
+| 448 | wav2vec2_phoneme | audio | speech | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+| 449 | wav2vec2_with_lm | audio | speech | — | — | — | — | — | — | — | — | Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure |
+
+## 3. Aggregated Task Analysis
+
+### Most Common Task Head Suffixes
+
+| Suffix | Count | Task |
+|--------|-------|------|
+| ForCausalLM | 142 | text-generation |
+| ForSequenceClassification | 124 | text-classification |
+| ForConditionalGeneration | 109 | conditional-generation |
+| ForTokenClassification | 94 | token-classification |
+| ForQuestionAnswering | 83 | question-answering |
+| ForMaskedLM | 43 | fill-mask |
+| ForImageClassification | 42 | image-classification |
+| ForMultipleChoice | 37 | multiple-choice |
+| ForPreTraining | 22 | pretraining |
+| ForObjectDetection | 20 | object-detection |
+| ForCTC | 13 | ctc-speech-recognition |
+| ForSemanticSegmentation | 9 | ForSemanticSegmentation |
+| ForPrediction | 9 | ForPrediction |
+| ForDepthEstimation | 8 | ForDepthEstimation |
+| ForAudioFrameClassification | 7 | ForAudioFrameClassification |
+| ForMaskedImageModeling | 7 | ForMaskedImageModeling |
+| ForNextSentencePrediction | 6 | ForNextSentencePrediction |
+| ForUniversalSegmentation | 6 | ForUniversalSegmentation |
+| ForXVector | 6 | ForXVector |
+| ForVideoClassification | 5 | ForVideoClassification |
+
+### Families per Task
+
+- **ForAudioTokenization** (1 families): auto
+- **ForCausalImageModeling** (1 families): imagegpt
+- **ForClassification** (1 families): patchtst
+- **ForContrastiveLearning** (1 families): bridgetower
+- **ForEntityClassification** (1 families): luke
+- **ForEntityPairClassification** (1 families): luke
+- **ForEntitySpanClassification** (1 families): luke
+- **ForGeneration** (1 families): rag
+- **ForImageAndTextRetrieval** (2 families): bridgetower, vilt
+- **ForImageClassificationConvProcessing** (1 families): perceiver
+- **ForImageClassificationFourier** (1 families): perceiver
+- **ForImageClassificationLearned** (1 families): perceiver
+- **ForImageClassificationWithTeacher** (2 families): deit, levit
+- **ForImageMatting** (1 families): vitmatte
+- **ForImageSuperResolution** (1 families): swin2sr
+- **ForImageTextToText** (1 families): auto
+- **ForImagesAndTextClassification** (1 families): vilt
+- **ForKeypointDetection** (2 families): auto, superpoint
+- **ForKeypointMatching** (4 families): auto, efficientloftr, lightglue, superglue
+- **ForMaskGeneration** (1 families): auto
+- **ForMultimodalAutoencoding** (1 families): perceiver
+- **ForMultimodalLM** (1 families): auto
+- **ForOpticalFlow** (1 families): perceiver
+- **ForPoseEstimation** (1 families): vitpose
+- **ForPrediction** (7 families): autoformer, informer, patchtsmixer, patchtst, time_series_transformer, timesfm, timesfm2_5
+- **ForPredictionHead** (1 families): patchtsmixer
+- **ForPretraining** (2 families): patchtsmixer, patchtst
+- **ForProteinFolding** (1 families): esm
+- **ForProteinText2Text** (1 families): evolla
+- **ForQuestionAnsweringHead** (1 families): big_bird
+- **ForQuestionAnsweringSimple** (3 families): flaubert, xlm, xlnet
+- **ForRegionToPhraseAlignment** (1 families): visual_bert
+- **ForRegression** (2 families): patchtsmixer, patchtst
+- **ForRetrieval** (3 families): colmodernvbert, colpali, colqwen2
+- **ForSceneTextRecognition** (1 families): mgp_str
+- **ForSegmentation** (2 families): conditional_detr, detr
+- **ForSpeechToSpeech** (3 families): seamless_m4t, seamless_m4t_v2, speecht5
+- **ForSpeechToText** (3 families): seamless_m4t, seamless_m4t_v2, speecht5
+- **ForTableQuestionAnswering** (1 families): auto
+- **ForTableRecognition** (2 families): auto, slanext
+- **ForTextRecognition** (3 families): auto, pp_ocrv5_mobile_rec, pp_ocrv5_server_rec
+- **ForTextToSpectrogram** (1 families): auto
+- **ForTextToSpeech** (3 families): seamless_m4t, seamless_m4t_v2, speecht5
+- **ForTextToText** (2 families): seamless_m4t, seamless_m4t_v2
+- **ForTimeSeriesClassification** (1 families): patchtsmixer
+- **ForTimeSeriesPrediction** (1 families): auto
+- **ForVideoGrounding** (1 families): tvp
+- **ForVisionText2Text** (1 families): idefics
+- **ForVisualReasoning** (1 families): visual_bert
+- **ForXVector** (6 families): data2vec, unispeech_sat, wav2vec2, wav2vec2_bert, wav2vec2_conformer, wavlm
+- **audio-classification** (3 families): audio_spectrogram_transformer, auto, whisper
+- **audio-frame-classification** (7 families): auto, data2vec, unispeech_sat, wav2vec2, wav2vec2_bert, wav2vec2_conformer, wavlm
+- **audio-xvector** (1 families): auto
+- **automatic-speech-recognition** (1 families): auto
+- **conditional-generation** (101 families): aria, audioflamingo3, aya_vision, bart, bigbird_pegasus, blenderbot, blenderbot_small, blip, blip_2, chameleon ...
+- **ctc-speech-recognition** (13 families): auto, data2vec, hubert, lasr, parakeet, sew, sew_d, unispeech, unispeech_sat, wav2vec2 ...
+- **depth-estimation** (8 families): auto, chmv2, depth_anything, depth_pro, dpt, glpn, prompt_depth_anything, zoedepth
+- **document-question-answering** (1 families): auto
+- **fill-mask** (43 families): albert, auto, bert, big_bird, bridgetower, camembert, convbert, data2vec, deberta, deberta_v2 ...
+- **image-classification** (42 families): auto, beit, bit, clip, convnext, convnextv2, cvt, data2vec, deit, dinat ...
+- **image-segmentation** (3 families): auto, clipseg, seggpt
+- **image-text-retrieval** (2 families): blip, blip_2
+- **image-to-image** (1 families): auto
+- **instance-segmentation** (2 families): auto, maskformer
+- **masked-image-modeling** (7 families): auto, beit, deit, focalnet, swin, swinv2, vit
+- **multiple-choice** (37 families): albert, auto, bert, big_bird, camembert, canine, convbert, data2vec, deberta_v2, distilbert ...
+- **next-sentence-prediction** (6 families): auto, bert, ernie, fnet, megatron_bert, mobilebert
+- **object-detection** (20 families): auto, conditional_detr, d_fine, dab_detr, deformable_detr, detr, grounding_dino, lw_detr, mm_grounding_dino, omdet_turbo ...
+- **pretraining** (22 families): albert, auto, bert, big_bird, electra, ernie, flava, fnet, funnel, hiera ...
+- **question-answering** (83 families): albert, arcee, auto, bart, bert, big_bird, bigbird_pegasus, blip, bloom, camembert ...
+- **semantic-segmentation** (9 families): auto, beit, data2vec, dpt, mobilenet_v2, mobilevit, mobilevitv2, segformer, upernet
+- **text-classification** (122 families): albert, arcee, auto, bart, bert, big_bird, bigbird_pegasus, biogpt, bloom, camembert ...
+- **text-encoding** (1 families): auto
+- **text-generation** (142 families): afmoe, apertus, arcee, aria, auto, bamba, bart, big_bird, bigbird_pegasus, biogpt ...
+- **text-to-waveform** (1 families): auto
+- **text2text-generation** (1 families): auto
+- **token-classification** (92 families): albert, apertus, arcee, auto, bert, big_bird, biogpt, bloom, bros, camembert ...
+- **universal-segmentation** (6 families): auto, eomt, eomt_dinov3, mask2former, oneformer, videomt
+- **video-classification** (5 families): auto, timesformer, videomae, vivit, vjepa2
+- **visual-question-answering** (1 families): auto
+- **zero-shot-image-classification** (1 families): auto
+- **zero-shot-object-detection** (1 families): auto
+
+### Top Families by Head Count
+
+| Family | Head Count |
+|--------|------------|
+| auto | 41 |
+| data2vec | 12 |
+| big_bird | 8 |
+| ernie | 8 |
+| luke | 8 |
+| megatron_bert | 8 |
+| bert | 7 |
+| electra | 7 |
+| fnet | 7 |
+| mobilebert | 7 |
+| perceiver | 7 |
+| roc_bert | 7 |
+| albert | 6 |
+| camembert | 6 |
+| funnel | 6 |
+| rembert | 6 |
+| roberta | 6 |
+| roberta_prelayernorm | 6 |
+| roformer | 6 |
+| xlm_roberta | 6 |
+
+## 4. LLM-Relevant View
+
+### Families with ForCausalLM (text-generation) — by Downloads
+
+| Family | Downloads | Models | Likes |
+|--------|-----------|--------|-------|
+| qwen2 | 86.9M | 1.8K | 44.2K |
+| qwen3 | 76.9M | 1.8K | 21.2K |
+| llama | 76.6M | 5.6K | 179.9K |
+| roberta | 63.1M | 753 | 12.3K |
+| xlm_roberta | 53.2M | 514 | 8.7K |
+| electra | 52.1M | 135 | 933 |
+| qwen3_5 | 19.4M | 573 | 6.5K |
+| whisper | 16.3M | 425 | 17.2K |
+| qwen3_5_moe | 12.4M | 159 | 5.2K |
+| gpt_oss | 12.2M | 148 | 11.9K |
+| gemma3 | 11.6M | 619 | 16.1K |
+| mistral | 10.4M | 2.6K | 48.2K |
+| bart | 10.1M | 161 | 6.2K |
+| qwen3_moe | 9.2M | 225 | 11.3K |
+| opt | 8.4M | 111 | 2.6K |
+| marian | 7.9M | 340 | 3.2K |
+| nemotron_h | 6.7M | 60 | 3.3K |
+| gpt_neox | 5.5M | 286 | 6.3K |
+| phi3 | 5.2M | 138 | 10.3K |
+| deepseek_v3 | 5.1M | 86 | 30.5K |
+| qwen3_next | 4.5M | 71 | 3.6K |
+| glm_moe_dsa | 3.8M | 19 | 2.1K |
+| glm4_moe_lite | 3.1M | 43 | 2.2K |
+| gemma2 | 2.9M | 180 | 7.7K |
+| lfm2_moe | 1.9M | 18 | 685 |
+| phi | 1.8M | 83 | 5.5K |
+| camembert | 1.8M | 68 | 742 |
+| bloom | 1.7M | 83 | 8.1K |
+| deepseek_v2 | 1.5M | 43 | 3.9K |
+| mixtral | 1.4M | 408 | 9.0K |
+| smollm3 | 1.2M | 21 | 1.1K |
+| lfm2 | 1.2M | 95 | 4.0K |
+| minimax_m2 | 1.2M | 40 | 4.4K |
+| mbart | 1.1M | 66 | 1.4K |
+| gpt_neo | 1.0M | 58 | 1.6K |
+| gemma3n | 900.3K | 39 | 1.6K |
+| glm4_moe | 881.9K | 58 | 6.4K |
+| phimoe | 753.0K | 10 | 642 |
+| granitemoehybrid | 748.5K | 63 | 1.7K |
+| gemma | 683.6K | 156 | 9.5K |
+
+### Families with ForConditionalGeneration
+
+| Family | Downloads | Models | Likes |
+|--------|-----------|--------|-------|
+| qwen3_5 | 19.4M | 573 | 6.5K |
+| t5 | 16.5M | 639 | 19.0K |
+| whisper | 16.3M | 425 | 17.2K |
+| qwen3_vl | 15.5M | 278 | 6.0K |
+| qwen2_5_vl | 14.7M | 283 | 12.2K |
+| qwen3_5_moe | 12.4M | 159 | 5.2K |
+| gemma3 | 11.6M | 619 | 16.1K |
+| bart | 10.1M | 161 | 6.2K |
+| qwen3_vl_moe | 6.6M | 39 | 2.4K |
+| qwen2_vl | 5.8M | 88 | 5.8K |
+| blip | 5.4M | 22 | 2.6K |
+| llava | 4.8M | 96 | 4.2K |
+| glm_ocr | 4.1M | 11 | 1.6K |
+| florence2 | 2.2M | 32 | 3.2K |
+| m2m_100 | 1.7M | 55 | 2.3K |
+| glm4v | 1.3M | 18 | 2.2K |
+| mbart | 1.1M | 66 | 1.4K |
+| blip_2 | 1.0M | 13 | 2.5K |
+| qwen2_5_omni | 986.6K | 28 | 2.5K |
+| internvl | 980.9K | 22 | 131 |
+| gemma3n | 900.3K | 39 | 1.6K |
+| llava_next | 785.8K | 25 | 974 |
+| mistral3 | 771.7K | 28 | 990 |
+| idefics3 | 704.2K | 20 | 4.4K |
+| mt5 | 664.3K | 84 | 1.6K |
+| llava_onevision | 636.5K | 14 | 263 |
+| llama4 | 579.6K | 50 | 3.2K |
+| smolvlm | 527.9K | 17 | 702 |
+| qwen3_omni_moe | 524.2K | 17 | 1.5K |
+| pegasus | 432.1K | 22 | 885 |
+
+### Families with ForVision2Seq (image-to-text)
+
+**0 families:** 
+
+## 5. Backend Coverage
+
+| Backend Config | Count |
+|----------------|-------|
+| PyTorch only | 426 |
+| PyTorch + TensorFlow | 0 |
+| PyTorch + Flax | 0 |
+| All three (PT+TF+Flax) | 0 |
+| No modeling files | 23 |
+
+## 6. Interesting Outliers
+
+### Families with Many Heads (>6)
+
+- **auto**: 41 heads
+- **data2vec**: 12 heads
+- **big_bird**: 8 heads
+- **ernie**: 8 heads
+- **luke**: 8 heads
+- **megatron_bert**: 8 heads
+- **bert**: 7 heads
+- **electra**: 7 heads
+- **fnet**: 7 heads
+- **mobilebert**: 7 heads
+- **perceiver**: 7 heads
+- **roc_bert**: 7 heads
+
+### Shared/Meta Folders
+
+- **auto**: Likely shared infrastructure or meta module, not a standalone architecture; Unusually broad head coverage (41 task heads)
+- **barthez**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **bartpho**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **bert_japanese**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **bertweet**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **byt5**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **code_llama**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **cpm**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **deprecated**: Likely shared infrastructure or meta module, not a standalone architecture; Likely deprecated/legacy; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **dialogpt**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **dit**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **encoder_decoder**: Likely shared infrastructure or meta module, not a standalone architecture
+- **gpt_sw3**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **herbert**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **layoutxlm**: Has modular file; modeling files are auto-generated; Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **mbart50**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **megatron_gpt2**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **mluke**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **myt5**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **nllb**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **nougat**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **phobert**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **pp_chart2table**: Has modular file; modeling files are auto-generated; Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **wav2vec2_phoneme**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+- **wav2vec2_with_lm**: Likely shared infrastructure or meta module, not a standalone architecture; No modeling files found; may be tokenizer-only, config-only, or infrastructure
+
+### Modular-File Families
+
+**213 families** use modular files: afmoe, aimv2, apertus, arcee, aria, audioflamingo3, aya_vision, bamba, biogpt, bitnet, blt, camembert, chmv2, cohere, cohere2, cohere2_vision, cohere_asr, colmodernvbert, colpali, colqwen2, conditional_detr, csm, cwm, d_fine, data2vec, dbrx, deepseek_v2, deepseek_v3, deepseek_vl, deepseek_vl_hybrid ...
+
+### Unmatched Hub Model Types
+
+Hub `model_type` values with no matching local family folder:
+
+| model_type | Hub Models | Downloads (30d) |
+|------------|-----------|-----------------|
+| unknown | 20011 | 94.7M |
+| nomic_bert | 19 | 14.0M |
+| deepseek_vl_v2 | 12 | 4.5M |
+| new | 19 | 4.5M |
+| kimi_k25 | 11 | 4.5M |
+| moondream1 | 6 | 4.2M |
+| internvl_chat | 135 | 3.7M |
+| h2ovl_chat | 2 | 2.4M |
+| openelm | 10 | 1.5M |
+| sundial | 1 | 1.5M |
+| musicgen | 6 | 1.5M |
+| phi3_v | 9 | 1.4M |
+| openvla | 17 | 1.1M |
+| parler_tts | 18 | 1.1M |
+| ultravox | 18 | 861.7K |
+| chatglm | 31 | 792.1K |
+| llada | 14 | 753.0K |
+| molmo2 | 8 | 727.2K |
+| exaone | 15 | 682.7K |
+| vibevoice | 12 | 593.0K |
+| hyperclovax | 2 | 584.3K |
+| kimi_vl | 10 | 540.0K |
+| deepseek_v32 | 13 | 533.3K |
+| xlm-token | 9 | 533.1K |
+| minicpmv | 14 | 531.4K |
+| nemotron_parse | 1 | 508.6K |
+| Vietnamese | 1 | 485.1K |
+| qwen | 29 | 480.4K |
+| dots_ocr | 15 | 434.5K |
+| jina_embeddings_v5 | 2 | 416.8K |
+
+## 7. Caveats
+
+- Folder count ≠ class count: one family can contain many classes and task heads.
+- Modality and architecture type are heuristic-based and may misclassify specialized families.
+- Some folders are infrastructure (e.g., `auto`), shared utilities, or deprecated wrappers.
+- Hub stats are from the top 50K models by downloads; long-tail models below this threshold are excluded.
+- Model count and author count reflect the top-50K sample, not the full Hub.
+- `model_type` normalization may miss non-standard or custom model types.

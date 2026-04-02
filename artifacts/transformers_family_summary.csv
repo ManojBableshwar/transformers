@@ -1,0 +1,450 @@
+family_name,modality,architecture_type,has_pytorch,has_tensorflow,has_flax,base_model_count,task_head_count,tasks_supported,has_modular,is_shared_meta,is_legacy,hub_model_count,hub_unique_authors,hub_downloads_30d,hub_downloads_all_time,hub_likes,hub_mean_trending,hub_max_trending,hub_top_model
+bert,text,encoder_only,True,False,False,4,7,fill-mask; multiple-choice; next-sentence-prediction; pretraining; question-answering; text-classification; token-classification,False,False,False,2127,992,464436278,11167273138,42101,0.07,31,sentence-transformers/all-MiniLM-L6-v2
+qwen2,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,1754,799,86940756,905393802,44247,0.1,23,Qwen/Qwen2.5-7B-Instruct
+qwen3,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,1831,569,76927847,410876283,21228,0.2,121,Qwen/Qwen3-0.6B
+llama,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,False,False,False,5556,1745,76642954,1650469147,179927,0.09,88,meta-llama/Llama-3.1-8B-Instruct
+vit,vision,vision_encoder,True,False,False,3,2,image-classification; masked-image-modeling,False,False,False,230,153,63934571,2948413967,4579,0.13,7,Falconsai/nsfw_image_detection
+clip,multimodal,multimodal,True,False,False,5,1,image-classification,False,False,False,91,49,63160601,2334093828,5066,0.3,9,openai/clip-vit-large-patch14
+roberta,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,True,False,False,753,410,63050095,3014665485,12314,0.03,5,FacebookAI/roberta-large
+wav2vec2,audio,speech,True,False,False,4,5,ForXVector; audio-frame-classification; ctc-speech-recognition; pretraining; text-classification,False,False,False,501,262,58247958,2315058809,5156,0.04,1,jonatasgrosman/wav2vec2-large-xlsr-53-russian
+xlm_roberta,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,True,False,False,514,235,53236387,1942886483,8686,0.06,7,FacebookAI/xlm-roberta-base
+electra,text,decoder_only,True,False,False,3,7,fill-mask; multiple-choice; pretraining; question-answering; text-classification; text-generation; token-classification,False,False,False,135,75,52057667,742130721,933,0.01,1,google/electra-base-discriminator
+mpnet,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,28,21,34860621,1288808149,1779,0.18,5,sentence-transformers/all-mpnet-base-v2
+clap,audio,speech,True,False,False,6,0,,False,False,False,6,2,26472414,142476709,272,0.5,3,laion/clap-htsat-fused
+gpt2,text,encoder_only,True,False,False,4,3,question-answering; text-classification; token-classification,False,False,False,787,392,21451369,1281146911,13766,0.05,29,openai-community/gpt2
+distilbert,text,encoder_only,True,False,False,2,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,378,235,20524232,1616587235,5610,0.04,5,distilbert/distilbert-base-uncased
+qwen3_5,text,encoder_decoder,True,False,False,4,3,conditional-generation; text-classification; text-generation,True,False,False,573,219,19374223,20066147,6529,1.43,114,Qwen/Qwen3.5-9B
+modernbert,text,encoder_only,True,False,False,2,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,True,False,False,214,90,17415399,98521889,3375,0.06,4,answerdotai/ModernBERT-base
+t5,text,encoder_decoder,True,False,False,3,4,conditional-generation; question-answering; text-classification; token-classification,False,False,False,639,319,16521113,971998759,18959,0.05,5,google-t5/t5-small
+whisper,audio,speech,True,False,False,4,3,audio-classification; conditional-generation; text-generation,False,False,False,425,254,16299319,500967775,17186,0.2,35,openai/whisper-large-v3-turbo
+qwen3_vl,text,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,278,112,15537698,64925980,5982,0.28,15,Qwen/Qwen3-VL-8B-Instruct
+deberta_v2,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,284,138,14967559,391661635,5994,0.08,5,microsoft/deberta-v3-base
+qwen2_5_vl,multimodal,multimodal,True,False,False,4,1,conditional-generation,True,False,False,283,129,14657943,173400663,12238,0.17,7,Qwen/Qwen2.5-VL-3B-Instruct
+qwen3_5_moe,text,encoder_decoder,True,False,False,4,2,conditional-generation; text-generation,True,False,False,159,74,12423711,15747867,5161,1.47,51,Qwen/Qwen3.5-35B-A3B
+gpt_oss,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,148,98,12181632,98927824,11908,2.91,342,openai/gpt-oss-20b
+gemma3,multimodal,multimodal,True,False,False,3,4,conditional-generation; text-classification; text-generation,True,False,False,619,271,11615901,114909066,16098,0.57,105,google/gemma-3-12b-it
+mistral,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,2597,752,10434147,395338814,48242,0.04,10,mistralai/Mistral-7B-Instruct-v0.2
+bart,text,encoder_decoder,True,False,False,6,4,conditional-generation; question-answering; text-classification; text-generation,False,False,False,161,93,10136255,547008434,6203,0.08,4,facebook/bart-large-mnli
+qwen3_moe,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,225,101,9179153,66322238,11274,0.37,15,Qwen/Qwen3-30B-A3B
+opt,text,decoder_only,True,False,False,3,3,question-answering; text-classification; text-generation,False,False,False,111,48,8365786,207977881,2631,0.02,1,facebook/opt-125m
+marian,multimodal,multimodal,True,False,False,5,1,text-generation,False,False,False,340,37,7854384,411538301,3153,0.01,3,Helsinki-NLP/opus-mt-fr-en
+esm,multimodal,multimodal,True,False,False,4,4,ForProteinFolding; fill-mask; text-classification; token-classification,False,False,False,45,15,7261076,283169447,468,0.13,4,facebook/esmfold_v1
+nemotron_h,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,60,31,6651880,12787685,3317,4.68,145,nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+qwen3_vl_moe,text,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,39,21,6593852,25100556,2369,0.26,3,Qwen/Qwen3-VL-30B-A3B-Instruct
+siglip,multimodal,multimodal,True,False,False,5,1,image-classification,False,False,False,92,16,6564903,122418788,1960,0.09,3,google/siglip-so400m-patch14-384
+qwen2_vl,multimodal,multimodal,True,False,False,4,1,conditional-generation,False,False,False,88,46,5817611,73769247,5848,0.15,2,Qwen/Qwen2-VL-2B-Instruct
+gpt_neox,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,286,78,5528854,62423853,6350,0.01,1,EleutherAI/pythia-160m
+blip,multimodal,multimodal,True,False,False,8,3,conditional-generation; image-text-retrieval; question-answering,False,False,False,22,14,5358554,120208161,2647,0.23,4,Salesforce/blip-image-captioning-base
+phi3,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,138,75,5197065,87260761,10255,0.13,4,kaitchup/Phi-3-mini-4k-instruct-gptq-4bit
+dinov2,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,22,11,5161243,158808794,593,0.45,4,facebook/dinov2-small
+deepseek_v3,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,86,37,5056402,56265373,30503,0.57,22,deepseek-ai/DeepSeek-R1
+vision_encoder_decoder,text,encoder_decoder,True,False,False,1,0,,False,False,False,132,79,5006122,169071000,4661,0.06,4,microsoft/trocr-base-printed
+llava,multimodal,multimodal,True,False,False,2,1,conditional-generation,False,False,False,96,62,4771982,77320310,4243,0.12,5,llava-hf/llava-1.5-7b-hf
+table_transformer,vision,vision_encoder,True,False,False,6,1,object-detection,False,False,False,12,8,4662396,115705967,720,0.5,5,microsoft/table-transformer-detection
+qwen3_next,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,71,38,4544309,30471781,3650,0.86,33,Qwen/Qwen3-Coder-Next-FP8
+glm_ocr,text,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,11,7,4122281,6426658,1590,6.82,72,zai-org/GLM-OCR
+vitpose,vision,vision_encoder,True,False,False,3,1,ForPoseEstimation,False,False,False,10,3,4056537,32605507,110,0.0,0.0,usyd-community/vitpose-plus-base
+glm_moe_dsa,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,19,14,3754006,5476305,2111,2.84,41,zai-org/GLM-5-FP8
+glm4_moe_lite,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,43,29,3061040,10489059,2186,0.65,20,zai-org/GLM-4.7-Flash
+depth_anything,vision,vision_encoder,True,False,False,1,1,depth-estimation,False,False,False,16,5,3025650,35272078,223,0.12,2,depth-anything/Depth-Anything-V2-Small-hf
+gemma2,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,180,103,2924489,76559918,7686,0.11,4,BAAI/bge-multilingual-gemma2
+vitmatte,vision,vision_encoder,True,False,False,1,1,ForImageMatting,False,False,False,4,1,2684484,58303390,71,0.5,2,hustvl/vitmatte-small-composition-1k
+mobilevit,vision,vision_encoder,True,False,False,3,2,image-classification; semantic-segmentation,False,False,False,7,2,2621857,26124396,142,0.0,0.0,apple/mobilevit-small
+dinov3_vit,vision,vision_encoder,True,False,False,3,0,,True,False,False,18,10,2577733,10028160,755,1.28,10,facebook/dinov3-vitb16-pretrain-lvd1689m
+sam3_video,vision,vision_encoder,True,False,False,2,0,,False,False,False,7,7,2523030,7608389,1836,8.0,54,facebook/sam3
+grounding_dino,vision,vision_encoder,True,False,False,6,1,object-detection,True,False,False,5,2,2359332,39656846,270,0.2,1,IDEA-Research/grounding-dino-base
+segformer,vision,vision_encoder,True,False,False,3,2,image-classification; semantic-segmentation,True,False,False,67,31,2325843,82444150,1332,0.1,3,nvidia/segformer-b0-finetuned-ade-512-512
+wav2vec2_bert,audio,speech,True,False,False,3,4,ForXVector; audio-frame-classification; ctc-speech-recognition; text-classification,True,False,False,23,15,2307618,23630268,241,0.3,2,facebook/w2v-bert-2.0
+florence2,text,encoder_decoder,True,False,False,3,1,conditional-generation,True,False,False,32,18,2191292,33563538,3225,0.31,6,microsoft/Florence-2-large
+rt_detr,vision,vision_encoder,True,False,False,7,1,object-detection,True,False,False,19,5,2095338,9157799,96,0.05,1,PekingU/rtdetr_r18vd_coco_o365
+hubert,audio,speech,True,False,False,4,2,ctc-speech-recognition; text-classification,True,False,False,50,38,1928587,97238293,682,0.06,1,lengyue233/content-vec-best
+longformer,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,43,33,1874411,156760887,530,0.05,2,allenai/longformer-base-4096
+lfm2_moe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,18,9,1853474,2710451,685,0.72,5,lmstudio-community/LFM2-24B-A2B-MLX-4bit
+phi,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,83,50,1819706,25869083,5459,0.06,4,microsoft/phi-2
+camembert,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,True,False,False,68,50,1805707,232747590,742,0.03,2,almanach/camembert-base
+deberta,text,encoder_only,True,False,False,3,4,fill-mask; question-answering; text-classification; token-classification,False,False,False,26,19,1693680,252595167,596,0.04,1,microsoft/deberta-large-mnli
+m2m_100,text,encoder_decoder,True,False,False,4,1,conditional-generation,False,False,False,55,39,1675202,74319818,2303,0.13,4,facebook/nllb-200-distilled-600M
+bloom,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,False,False,False,83,41,1662408,103219088,8130,0.04,2,bigscience/bloomz-560m
+deepseek_v2,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,43,16,1475726,16764963,3915,0.21,5,deepseek-ai/DeepSeek-V2-Lite-Chat
+mixtral,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,408,161,1360226,38671592,8990,0.0,1,ggml-org/stories15M_MOE
+albert,text,encoder_only,True,False,False,2,6,fill-mask; multiple-choice; pretraining; question-answering; text-classification; token-classification,False,False,False,68,43,1346690,221938240,553,0.01,1,albert/albert-base-v2
+mimi,audio,speech,True,False,False,5,0,,False,False,False,1,1,1294224,16710941,295,1.0,1,kyutai/mimi
+wavlm,audio,speech,True,False,False,4,4,ForXVector; audio-frame-classification; ctc-speech-recognition; text-classification,True,False,False,14,7,1291659,56875261,255,0.14,1,microsoft/wavlm-base-plus
+owlv2,vision,vision_encoder,True,False,False,5,1,object-detection,True,False,False,6,1,1289976,26788396,202,0.17,1,google/owlv2-base-patch16-ensemble
+glm4v,vision,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,18,8,1267003,7504169,2211,0.28,2,zai-org/GLM-4.1V-9B-Thinking
+smollm3,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,21,17,1216613,2871221,1125,0.29,6,HuggingFaceTB/SmolLM3-3B
+lfm2,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,95,37,1205150,9519111,4001,2.31,172,LiquidAI/LFM2.5-1.2B-Instruct
+minimax_m2,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,40,24,1193074,4150598,4365,1.18,39,MiniMaxAI/MiniMax-M2.5
+yolos,vision,vision_encoder,True,False,False,3,1,object-detection,True,False,False,16,8,1091475,22809885,606,0.0,0.0,valentinafevu/yolos-fashionpedia
+mbart,text,encoder_decoder,True,False,False,4,4,conditional-generation; question-answering; text-classification; text-generation,False,False,False,66,40,1083156,41812595,1350,0.0,0.0,ai4bharat/IndicBART
+mask2former,multimodal,multimodal,True,False,False,4,1,universal-segmentation,True,False,False,31,6,1070722,24506683,193,0.0,0.0,facebook/mask2former-swin-large-coco-panoptic
+gpt_neo,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,False,False,False,58,36,1029327,34426552,1596,0.0,0.0,EleutherAI/gpt-neo-125m
+blip_2,multimodal,multimodal,True,False,False,6,2,conditional-generation; image-text-retrieval,False,False,False,13,5,1019692,26906132,2510,0.08,1,Salesforce/blip2-opt-2.7b
+layoutlmv3,multimodal,multimodal,True,False,False,3,3,question-answering; text-classification; token-classification,False,False,False,35,18,1004753,172965626,899,0.09,1,microsoft/layoutlmv3-base
+clipseg,multimodal,multimodal,True,False,False,6,1,image-segmentation,False,False,False,5,3,995180,145237916,142,0.0,0.0,CIDAS/clipseg-rd64-refined
+qwen2_5_omni,text,encoder_decoder,True,False,False,8,4,conditional-generation,True,False,False,28,20,986595,6383105,2548,0.32,5,Qwen/Qwen2.5-Omni-7B
+parakeet,text,speech,True,False,False,2,1,ctc-speech-recognition,True,False,False,2,1,983613,3333592,68,0.0,0.0,nvidia/parakeet-ctc-1.1b
+internvl,multimodal,multimodal,True,False,False,5,1,conditional-generation,True,False,False,22,5,980878,7102208,131,0.0,0.0,OpenGVLab/InternVL3_5-GPT-OSS-20B-A4B-Preview-HF
+gemma3n,multimodal,multimodal,True,False,False,4,2,conditional-generation; text-generation,True,False,False,39,16,900292,10547931,1553,0.13,2,google/gemma-3n-E2B-it
+glm4_moe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,58,25,881889,8286635,6420,0.36,6,zai-org/GLM-4.5-Air
+siglip2,multimodal,multimodal,True,False,False,5,1,image-classification,True,False,False,2,1,857479,25543812,91,1.0,1,google/siglip2-base-patch16-naflex
+audio_spectrogram_transformer,audio,speech,True,False,False,3,1,audio-classification,False,False,False,33,18,839223,2199634058,438,0.12,3,MIT/ast-finetuned-audioset-10-10-0.4593
+llava_next,multimodal,multimodal,True,False,False,2,1,conditional-generation,False,False,False,25,12,785814,25603297,974,0.04,1,llava-hf/llava-v1.6-mistral-7b-hf
+vits,audio,speech,True,False,False,5,0,,False,False,False,127,20,774018,28781277,913,0.02,1,facebook/mms-tts-hat
+mistral3,text,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,28,19,771740,1469233,990,1.04,28,lightonai/LightOnOCR-2-1B
+phimoe,multimodal,multimodal,True,False,False,2,2,text-classification; text-generation,True,False,False,10,7,753011,3486932,642,0.0,0.0,microsoft/Phi-tiny-MoE-instruct
+granitemoehybrid,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,63,13,748536,2537090,1707,0.14,2,ibm-granite/granite-4.0-micro-base
+eurobert,text,encoder_only,True,False,False,2,3,fill-mask; text-classification; token-classification,True,False,False,16,4,723957,4846542,189,0.0,0.0,OpenMed/OpenMed-NER-ChemicalDetect-EuroMed-212M
+mobilebert,text,encoder_only,True,False,False,3,7,fill-mask; multiple-choice; next-sentence-prediction; pretraining; question-answering; text-classification; token-classification,False,False,False,10,8,718537,15106477,117,0.0,0.0,google/mobilebert-uncased
+idefics3,multimodal,multimodal,True,False,False,3,1,conditional-generation,False,False,False,20,11,704213,9664458,4397,0.35,4,HuggingFaceTB/SmolVLM-256M-Instruct
+gemma,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,156,86,683597,36983524,9500,0.06,4,google/gemma-2b
+mt5,text,encoder_decoder,True,False,False,3,4,conditional-generation; question-answering; text-classification; token-classification,False,False,False,84,51,664341,48050265,1554,0.01,1,google/mt5-large
+olmo2,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,40,7,658538,5972763,488,0.0,0.0,allenai/OLMo-2-0425-1B
+lightglue,vision,vision_encoder,True,False,False,2,1,ForKeypointMatching,True,False,False,3,2,657832,16064592,77,0.0,0.0,ETH-CVG/lightglue_superpoint
+granitemoe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,10,2,654092,4266452,143,0.0,0.0,ibm-research/PowerMoE-3b
+beit,vision,vision_encoder,True,False,False,3,3,image-classification; masked-image-modeling; semantic-segmentation,False,False,False,29,12,645946,58209083,380,0.0,0.0,microsoft/beit-base-patch16-224-pt22k-ft22k
+layoutlmv2,multimodal,multimodal,True,False,False,3,3,question-answering; text-classification; token-classification,False,False,False,6,4,645242,57431819,177,0.0,0.0,microsoft/layoutlmv2-base-uncased
+llava_onevision,multimodal,multimodal,True,False,False,2,1,conditional-generation,True,False,False,14,6,636532,14639310,263,0.29,1,llava-hf/llava-onevision-qwen2-0.5b-ov-hf
+swinv2,vision,vision_encoder,True,False,False,3,2,image-classification; masked-image-modeling,False,False,False,20,7,635245,11870726,122,0.05,1,microsoft/swinv2-tiny-patch4-window16-256
+convbert,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,5,3,621239,58813223,24,0.0,0.0,YituTech/conv-bert-base
+fnet,text,encoder_only,True,False,False,3,7,fill-mask; multiple-choice; next-sentence-prediction; pretraining; question-answering; text-classification; token-classification,False,False,False,1,1,617657,57801480,18,0.0,0.0,google/fnet-base
+superpoint,vision,encoder_decoder,True,False,False,4,1,ForKeypointDetection,False,False,False,1,1,609178,16231933,24,0.0,0.0,magic-leap-community/superpoint
+olmo3,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,72,12,602732,1816011,837,0.12,4,allenai/Olmo-3-7B-Instruct
+zoedepth,vision,vision_encoder,True,False,False,2,1,depth-estimation,False,False,False,3,1,600933,23222926,23,0.0,0.0,Intel/zoedepth-nyu-kitti
+dpt,vision,vision_encoder,True,False,False,3,2,depth-estimation; semantic-segmentation,True,False,False,13,2,588108,30874968,355,0.15,1,Intel/dpt-hybrid-midas
+llama4,vision,encoder_decoder,True,False,False,4,2,conditional-generation; text-generation,False,False,False,50,21,579597,9702041,3218,0.3,7,meta-llama/Llama-4-Scout-17B-16E-Instruct
+mm_grounding_dino,vision,vision_encoder,True,False,False,6,1,object-detection,True,False,False,10,2,547209,5300993,58,0.0,0.0,iSEE-Laboratory/llmdet_base
+detr,vision,vision_encoder,True,False,False,5,2,ForSegmentation; object-detection,False,False,False,31,22,537201,42399224,1355,0.06,1,TahaDouaji/detr-doc-table-detection
+timm_wrapper,vision,vision_encoder,True,False,False,2,1,image-classification,False,False,False,5,4,532367,6387248,59,0.02,0.1,Freepik/nsfw_image_detector
+vit_mae,vision,encoder_decoder,True,False,False,4,1,pretraining,False,False,False,6,3,529076,26880558,61,0.0,0.0,facebook/vit-mae-base
+smolvlm,vision,encoder_decoder,True,False,False,3,1,conditional-generation,True,False,False,17,8,527877,5072838,702,0.35,3,HuggingFaceTB/SmolVLM2-500M-Video-Instruct
+xlnet,multimodal,multimodal,True,False,False,3,5,ForQuestionAnsweringSimple; multiple-choice; question-answering; text-classification; token-classification,False,False,False,16,11,527187,26474914,154,0.0,0.0,xlnet/xlnet-base-cased
+qwen3_omni_moe,text,encoder_decoder,True,False,False,8,5,conditional-generation,True,False,False,17,9,524189,3316042,1462,1.29,17,Qwen/Qwen3-Omni-30B-A3B-Instruct
+resnet,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,32,25,509275,600759824,663,0.06,2,microsoft/resnet-50
+sam,vision,encoder_decoder,True,False,False,6,0,,False,False,False,10,7,498429,27578609,484,0.1,1,facebook/sam-vit-base
+dpr,text,unknown,True,False,False,6,0,,False,False,False,14,4,467624,33680290,93,0.0,0.0,facebook/dpr-ctx_encoder-single-nq-base
+pegasus,text,encoder_decoder,True,False,False,4,2,conditional-generation; text-generation,False,False,False,22,14,432095,27461690,885,0.14,1,google/pegasus-xsum
+paligemma,multimodal,multimodal,True,False,False,2,1,conditional-generation,False,False,False,36,9,423316,13138812,1457,0.06,1,google/paligemma-3b-mix-224
+luke,multimodal,multimodal,True,False,False,3,8,ForEntityClassification; ForEntityPairClassification; ForEntitySpanClassification; fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,14,5,417428,6778254,191,0.0,0.0,studio-ousia/luke-large-finetuned-tacred
+t5gemma,text,encoder_decoder,True,False,False,5,3,conditional-generation; text-classification; token-classification,True,False,False,26,3,366523,20415964,141,0.23,2,google/t5gemma-s-s-prefixlm
+qwen2_audio,audio,speech,True,False,False,2,1,conditional-generation,False,False,False,4,3,365935,4799288,709,0.0,0.0,Qwen/Qwen2-Audio-7B-Instruct
+dac,text,encoder_decoder,True,False,False,4,0,,False,False,False,4,2,364400,4992726,14,0.0,0.0,descript/dac_44khz
+granite,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,38,9,350616,8117101,1201,0.08,1,ibm-granite/granite-3.3-8b-instruct
+wav2vec2_conformer,audio,speech,True,False,False,4,5,ForXVector; audio-frame-classification; ctc-speech-recognition; pretraining; text-classification,True,False,False,4,2,347718,1877916,24,0.0,0.0,facebook/wav2vec2-conformer-rope-large-960h-ft
+mllama,multimodal,multimodal,True,False,False,5,2,conditional-generation; text-generation,False,False,False,31,12,346020,24043995,3347,0.23,2,meta-llama/Llama-3.2-11B-Vision-Instruct
+falcon,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,False,False,False,55,26,344188,65322562,7909,0.01,0.5,tiiuae/falcon-7b
+granite_speech,audio,speech,True,False,False,2,1,conditional-generation,False,False,False,5,2,337185,1389599,511,5.2,25,ibm-granite/granite-speech-3.3-2b
+speecht5,audio,speech,True,False,False,5,3,ForSpeechToSpeech; ForSpeechToText; ForTextToSpeech,False,False,False,28,14,328365,6162440,1042,0.11,1,microsoft/speecht5_tts
+oneformer,multimodal,multimodal,True,False,False,8,1,universal-segmentation,False,False,False,6,1,318255,12824200,81,0.0,0.0,shi-labs/oneformer_coco_swin_large
+videomae,vision,encoder_decoder,True,False,False,4,2,pretraining; video-classification,False,False,False,22,12,294909,8290818,175,0.05,1,ai-forever/kandinsky-videomae-large-camera-motion
+big_bird,text,decoder_only,True,False,False,3,8,ForQuestionAnsweringHead; fill-mask; multiple-choice; pretraining; question-answering; text-classification; text-generation; token-classification,False,False,False,13,10,291382,9185247,174,0.0,0.0,google/bigbird-roberta-base
+qwen2_moe,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,22,8,264719,3134202,572,0.0,0.0,Qwen/Qwen1.5-MoE-A2.7B
+vibevoice_asr,text,encoder_decoder,True,False,False,1,1,conditional-generation,True,False,False,2,2,258254,264869,72,3.5,7,microsoft/VibeVoice-ASR-HF
+openai,text,encoder_only,True,False,False,4,1,text-classification,False,False,False,2,2,255333,6519285,296,0.0,0.0,openai-community/openai-gpt
+gptj,text,decoder_only,True,False,False,2,3,question-answering; text-classification; text-generation,False,False,False,61,28,253818,15799274,3343,0.02,1,EleutherAI/gpt-j-6b
+dinov2_with_registers,vision,vision_encoder,True,False,False,3,1,image-classification,True,False,False,6,2,251377,2676543,42,0.17,1,facebook/dinov2-with-registers-base
+mamba,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,9,5,240069,3749847,218,0.0,0.0,state-spaces/mamba-130m-hf
+encodec,audio,speech,True,False,False,4,0,,False,False,False,4,2,236725,40225021,114,0.0,0.0,facebook/encodec_32khz
+pp_doclayout_v3,vision,vision_encoder,True,False,False,5,1,object-detection,True,False,False,1,1,232983,308856,20,0.0,0.0,PaddlePaddle/PP-DocLayoutV3_safetensors
+biogpt,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,8,6,230035,5563686,659,0.12,1,microsoft/biogpt
+bamba,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,3,2,226564,1210991,56,0.0,0.0,hmellor/tiny-random-BambaForCausalLM
+glmasr,text,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,2,2,217170,1013851,359,0.5,1,zai-org/GLM-ASR-Nano-2512
+sam2_video,vision,encoder_decoder,True,False,False,5,0,,True,False,False,8,1,213667,9533835,372,0.38,2,facebook/sam2.1-hiera-tiny
+markuplm,text,encoder_only,True,False,False,3,3,question-answering; text-classification; token-classification,False,False,False,3,1,213311,1591870,48,0.0,0.0,microsoft/markuplm-base
+seed_oss,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,20,12,208728,4559029,770,0.25,4,lmstudio-community/Seed-OSS-36B-Instruct-MLX-8bit
+cohere,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,27,15,199684,4491942,5072,0.15,1,trl-internal-testing/tiny-CohereForCausalLM
+vjepa2,text,unknown,True,False,False,3,1,video-classification,False,False,False,9,2,197553,1509586,306,0.89,5,facebook/vjepa2-vitl-fpc64-256
+apertus,text,decoder_only,True,False,False,2,2,text-generation; token-classification,True,False,False,12,6,193076,2610918,939,0.25,1,swiss-ai/Apertus-8B-Instruct-2509
+chinese_clip,multimodal,multimodal,True,False,False,6,0,,False,False,False,5,2,190069,2232419,220,0.0,0.0,OFA-Sys/chinese-clip-vit-base-patch16
+xglm,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,18,4,189045,3357092,369,0.06,1,facebook/xglm-564M
+aria,multimodal,multimodal,True,False,False,4,2,conditional-generation; text-generation,True,False,False,2,2,188617,855780,637,0.0,0.0,m-ric/Aria_hf_2
+cohere2,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,28,12,187862,949807,1418,0.39,2,trl-internal-testing/tiny-Cohere2ForCausalLM
+owlvit,vision,vision_encoder,True,False,False,5,1,object-detection,False,False,False,5,3,186257,19769587,189,0.2,1,google/owlvit-base-patch32
+falcon_mamba,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,6,2,184437,1603961,369,0.33,2,trl-internal-testing/tiny-FalconMambaForCausalLM
+flaubert,multimodal,multimodal,True,False,False,3,5,ForQuestionAnsweringSimple; multiple-choice; question-answering; text-classification; token-classification,False,False,False,7,4,179370,6315308,21,0.0,0.0,flaubert/flaubert_base_cased
+layoutlm,text,encoder_only,True,False,False,3,4,fill-mask; question-answering; text-classification; token-classification,False,False,False,8,4,178758,76674186,1498,0.0,0.0,microsoft/layoutlm-base-uncased
+roformer,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,False,False,False,7,5,176306,1245194,37,0.0,0.0,junnyu/roformer_chinese_small
+lfm2_vl,vision,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,15,4,175807,516099,786,0.47,6,LiquidAI/LFM2.5-VL-1.6B
+glm4v_moe,text,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,12,6,174839,2341759,1216,0.25,2,zai-org/GLM-4.6V
+swin,vision,vision_encoder,True,False,False,3,2,image-classification; masked-image-modeling,False,False,False,38,24,174251,13313642,265,0.0,0.0,Organika/sdxl-detector
+codegen,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,30,11,174033,7153195,901,0.03,1,Salesforce/codegen-350M-mono
+idefics2,multimodal,multimodal,True,False,False,3,1,conditional-generation,False,False,False,5,3,170159,2699759,671,0.0,0.0,HuggingFaceM4/idefics2-8b
+audioflamingo3,multimodal,multimodal,True,False,False,2,1,conditional-generation,True,False,False,2,1,169915,446319,262,1.0,2,nvidia/audio-flamingo-3-hf
+ernie,text,decoder_only,True,False,False,3,8,fill-mask; multiple-choice; next-sentence-prediction; pretraining; question-answering; text-classification; text-generation; token-classification,True,False,False,14,5,169843,3385585,391,0.0,0.0,shibing624/text2vec-base-chinese-paraphrase
+reformer,text,encoder_only,True,False,False,3,3,fill-mask; question-answering; text-classification,False,False,False,2,1,167776,1704815,32,0.0,0.0,google/reformer-crime-and-punishment
+kosmos2,multimodal,multimodal,True,False,False,5,2,conditional-generation; text-generation,False,False,False,1,1,162366,3692394,184,0.0,0.0,microsoft/kosmos-2-patch14-224
+dinov3_convnext,vision,vision_encoder,True,False,False,3,0,,False,False,False,4,1,159939,968230,91,1.5,2,facebook/dinov3-convnext-tiny-pretrain-lvd1689m
+fsmt,text,encoder_decoder,True,False,False,4,1,conditional-generation,False,False,False,8,4,157510,7155344,94,0.0,0.0,stas/tiny-wmt19-en-de
+starcoder2,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,17,9,149015,8886401,1454,0.12,2,bigcode/starcoder2-3b
+canine,text,encoder_only,True,False,False,3,4,multiple-choice; question-answering; text-classification; token-classification,False,False,False,9,4,148575,16491833,69,0.0,0.0,nielsr/canine-s
+altclip,multimodal,multimodal,True,False,False,7,0,,False,False,False,3,1,147759,783588,44,0.0,0.0,BAAI/AltCLIP
+speech_to_text,audio,speech,True,False,False,4,1,conditional-generation,False,False,False,7,2,147683,3439400,61,0.0,0.0,facebook/s2t-small-librispeech-asr
+x_clip,multimodal,multimodal,True,False,False,6,0,,False,False,False,7,1,147360,7346408,163,0.0,0.0,microsoft/xclip-base-patch32
+csm,text,encoder_decoder,True,False,False,3,2,conditional-generation; text-generation,True,False,False,12,5,145220,773052,2529,0.42,3,sesame/csm-1b
+moshi,text,encoder_decoder,True,False,False,3,2,conditional-generation; text-generation,False,False,False,2,1,144138,334853,1,0.0,0.0,kmhf/hf-moshiko
+plbart,text,encoder_decoder,True,False,False,4,3,conditional-generation; text-classification; text-generation,True,False,False,3,1,143148,1223774,9,0.0,0.0,uclanlp/plbart-base
+funnel,text,encoder_decoder,True,False,False,5,6,fill-mask; multiple-choice; pretraining; question-answering; text-classification; token-classification,False,False,False,4,4,141374,2743676,9,0.0,0.0,funnel-transformer/small
+ctrl,text,encoder_only,True,False,False,3,1,text-classification,False,False,False,2,2,138663,1706955,16,0.0,0.0,Salesforce/ctrl
+exaone4,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,13,4,137167,1900398,539,0.15,2,LGAI-EXAONE/EXAONE-4.0-32B-FP8
+blenderbot,text,encoder_decoder,True,False,False,4,2,conditional-generation; text-generation,False,False,False,4,3,137057,7165531,624,0.0,0.0,facebook/blenderbot-3B
+olmoe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,6,2,134694,1608909,338,0.33,1,allenai/OLMoE-1B-7B-0125-Instruct
+xlm,multimodal,multimodal,True,False,False,3,5,ForQuestionAnsweringSimple; multiple-choice; question-answering; text-classification; token-classification,False,False,False,5,2,134548,1449834,6,0.0,0.0,FacebookAI/xlm-mlm-en-2048
+gpt_bigcode,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,False,False,False,31,16,133530,6579472,5471,0.13,4,bigcode/gpt_bigcode-santacoder
+bert_generation,text,encoder_decoder,True,False,False,4,0,,False,False,False,2,2,132323,616418,1,0.0,0.0,google/bert_for_seq_generation_L-24_bbc_encoder
+janus,multimodal,multimodal,True,False,False,6,1,conditional-generation,True,False,False,4,3,131904,329808,11,0.25,1,deepseek-community/Janus-Pro-1B
+prophetnet,text,encoder_decoder,True,False,False,4,2,conditional-generation; text-generation,False,False,False,4,2,131410,944492,15,0.0,0.0,microsoft/prophetnet-large-uncased
+roc_bert,text,decoder_only,True,False,False,3,7,fill-mask; multiple-choice; pretraining; question-answering; text-classification; text-generation; token-classification,False,False,False,1,1,130940,343461,5,0.0,0.0,weiweishi/roc-bert-base-zh
+blenderbot_small,text,encoder_decoder,True,False,False,4,2,conditional-generation; text-generation,False,False,False,2,1,130471,1494811,57,0.0,0.0,facebook/blenderbot_small-90M
+rt_detr_v2,vision,vision_encoder,True,False,False,5,1,object-detection,True,False,False,11,6,129860,1455762,58,0.0,0.0,PekingU/rtdetr_v2_r18vd
+mgp_str,multimodal,multimodal,True,False,False,3,1,ForSceneTextRecognition,False,False,False,1,1,128549,596921,65,0.0,0.0,alibaba-damo/mgp-str-base
+clvp,text,encoder_decoder,True,False,False,5,2,conditional-generation; text-generation,False,False,False,1,1,127031,311120,0,0.0,0.0,susnato/clvp_dev
+splinter,text,encoder_only,True,False,False,3,2,pretraining; question-answering,False,False,False,2,1,126781,465711,2,0.0,0.0,tau/splinter-base
+rembert,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,False,False,False,2,2,126317,621980,25,0.0,0.0,google/rembert
+perceiver,multimodal,multimodal,True,False,False,11,7,ForImageClassificationConvProcessing; ForImageClassificationFourier; ForImageClassificationLearned; ForMultimodalAutoencoding; ForOpticalFlow; fill-mask; text-classification,False,False,False,5,1,126227,1241356,61,0.0,0.0,deepmind/language-perceiver
+video_llama_3,vision,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,1,1,124687,257610,0,0.0,0.0,lkhl/VideoLLaMA3-2B-Image-HF
+convnextv2,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,20,5,122679,6314524,64,0.1,1,facebook/convnextv2-tiny-22k-224
+gpt_neox_japanese,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,2,2,121741,419330,58,0.0,0.0,abeja/gpt-neox-japanese-2.7b
+kosmos2_5,multimodal,multimodal,True,False,False,5,2,conditional-generation; text-generation,False,False,False,2,1,120068,324974,296,0.0,0.0,microsoft/kosmos-2.5
+ernie4_5_moe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,8,3,115550,1994144,1052,0.0,0.0,baidu/ERNIE-4.5-21B-A3B-PT
+seamless_m4t,multimodal,multimodal,True,False,False,7,5,ForSpeechToSpeech; ForSpeechToText; ForTextToSpeech; ForTextToText; conditional-generation,False,False,False,2,1,113143,773294,94,0.0,0.0,facebook/hf-seamless-m4t-medium
+fastspeech2_conformer,multimodal,multimodal,True,False,False,3,0,,False,False,False,5,3,112396,5682383,34,0.0,0.0,microsoft/speecht5_hifigan
+tapas,text,encoder_only,True,False,False,3,3,fill-mask; question-answering; text-classification,False,False,False,17,4,111754,5947529,431,0.0,0.0,google/tapas-large-finetuned-sqa
+zamba2,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,9,2,109214,778009,294,0.11,1,Zyphra/Zamba2-1.2B-instruct
+vilt,vision,vision_encoder,True,False,False,3,5,ForImageAndTextRetrieval; ForImagesAndTextClassification; fill-mask; question-answering; token-classification,False,False,False,4,1,108852,22248432,436,0.5,1,dandelin/vilt-b32-finetuned-vqa
+t5gemma2,text,encoder_decoder,True,False,False,5,3,conditional-generation; text-classification; token-classification,True,False,False,6,2,106669,229271,406,0.0,0.0,google/t5gemma-2-1b-1b
+llava_next_video,multimodal,multimodal,True,False,False,2,1,conditional-generation,True,False,False,4,1,103833,2368342,153,0.25,1,llava-hf/LLaVA-NeXT-Video-7B-hf
+udop,text,encoder_decoder,True,False,False,3,1,conditional-generation,False,False,False,1,1,102852,383243,122,0.0,0.0,microsoft/udop-large
+colqwen2,text,unknown,True,False,False,1,1,ForRetrieval,True,False,False,1,1,100968,246962,23,2.0,2,vidore/colqwen2-v1.0-hf
+stablelm,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,False,False,False,29,14,100239,3028972,2536,0.0,0.1,stabilityai/stablelm-3b-4e1t
+seamless_m4t_v2,multimodal,multimodal,True,False,False,8,5,ForSpeechToSpeech; ForSpeechToText; ForTextToSpeech; ForTextToText; conditional-generation,False,False,False,3,3,98512,3251554,988,0.67,1,facebook/seamless-m4t-v2-large
+mobilenet_v2,vision,vision_encoder,True,False,False,2,2,image-classification; semantic-segmentation,False,False,False,14,10,97656,2318268,119,0.0,0.0,google/mobilenet_v2_1.0_224
+chameleon,multimodal,multimodal,True,False,False,3,1,conditional-generation,False,False,False,4,3,89075,1254239,251,0.0,0.0,facebook/chameleon-7b
+deit,vision,vision_encoder,True,False,False,3,3,ForImageClassificationWithTeacher; image-classification; masked-image-modeling,False,False,False,5,2,85754,2144203,57,0.2,1,facebook/deit-base-distilled-patch16-384
+moonshine,text,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,14,1,85321,795733,105,0.0,0.0,UsefulSensors/moonshine-base
+aya_vision,text,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,3,2,83455,703724,542,0.0,0.0,CohereLabs/aya-vision-8b
+solar_open,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,5,3,79556,107353,544,1.0,4,upstage/Solar-Open-100B
+efficientnet,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,15,6,75533,2382046,140,0.13,1,chriamue/bird-species-classifier
+falcon_h1,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,24,4,75397,915320,591,0.12,1,tiiuae/Falcon-H1-0.5B-Base
+fuyu,multimodal,multimodal,True,False,False,2,1,text-generation,False,False,False,2,2,75351,871586,1022,0.0,0.0,adept/fuyu-8b
+bark,audio,speech,True,False,False,6,0,,False,False,False,3,2,68975,3257419,1769,0.33,1,suno/bark-small
+metaclip_2,multimodal,multimodal,True,False,False,5,1,image-classification,True,False,False,14,1,66658,302782,88,0.07,1,facebook/metaclip-2-worldwide-huge-quickgelu
+conditional_detr,vision,vision_encoder,True,False,False,5,2,ForSegmentation; object-detection,True,False,False,6,6,62851,499140,54,0.17,1,yainage90/fashion-object-detection
+convnext,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,18,3,62712,35750720,96,0.06,1,facebook/convnext-tiny-224
+minimax,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,9,4,60290,636190,20,0.0,0.0,MiniMaxAI/MiniMax-Text-01-hf
+cohere_asr,text,encoder_decoder,True,False,False,3,1,conditional-generation,True,False,False,1,1,58683,58683,701,701.0,701,CohereLabs/cohere-transcribe-03-2026
+hunyuan_v1_dense,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,25,4,58174,1002206,1976,0.2,2,tencent/HY-MT1.5-1.8B
+afmoe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,19,4,57595,133603,584,0.37,5,arcee-ai/Trinity-Large-Preview-W4A16
+olmo,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,16,5,53808,4040193,326,0.06,1,allenai/OLMo-1B-hf
+lilt,text,encoder_only,True,False,False,3,3,question-answering; text-classification; token-classification,False,False,False,14,5,51404,3029764,68,0.0,0.0,SCUT-DLVCLab/lilt-roberta-en-base
+timesformer,text,unknown,True,False,False,3,1,video-classification,False,False,False,8,2,48941,3030548,69,0.0,0.0,facebook/timesformer-base-finetuned-k400
+led,text,encoder_decoder,True,False,False,4,2,conditional-generation; question-answering,False,False,False,12,5,48207,6439621,359,0.0,0.0,allenai/led-base-16384
+bros,text,encoder_only,True,False,False,3,3,token-classification,False,False,False,3,2,48103,2426784,28,0.0,0.0,naver-clova-ocr/bros-base-uncased
+nemotron,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,False,False,False,7,5,48047,383850,387,0.29,2,nvidia/Nemotron-Mini-4B-Instruct
+cohere2_vision,vision,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,1,1,46833,311444,86,1.0,1,CohereLabs/command-a-vision-07-2025
+longt5,text,encoder_decoder,True,False,False,3,1,conditional-generation,False,False,False,9,6,45188,6884880,277,0.0,0.0,google/long-t5-tglobal-base
+jamba,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,36,4,43266,849869,1870,0.0,0.0,ai21labs/AI21-Jamba-Mini-1.5
+olmo_hybrid,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,5,2,42784,49050,97,0.6,1,allenai/Olmo-Hybrid-7B
+bigbird_pegasus,text,encoder_decoder,True,False,False,4,4,conditional-generation; question-answering; text-classification; text-generation,False,False,False,5,3,42529,1253415,152,0.0,0.0,optimum-intel-internal-testing/tiny-random-bigbird_pegasus
+deformable_detr,vision,vision_encoder,True,False,False,5,1,object-detection,True,False,False,8,5,41752,1981976,86,0.0,0.0,Aryn/deformable-detr-DocLayNet
+vivit,vision,vision_encoder,True,False,False,3,1,video-classification,False,False,False,3,2,40231,1961881,49,0.0,0.0,google/vivit-b-16x2-kinetics400
+megatron_bert,text,decoder_only,True,False,False,3,8,fill-mask; multiple-choice; next-sentence-prediction; pretraining; question-answering; text-classification; text-generation; token-classification,False,False,False,12,4,39090,3752061,188,0.25,2,KBLab/megatron-bert-large-swedish-cased-165-zero-shot
+colpali,multimodal,multimodal,True,False,False,1,1,ForRetrieval,True,False,False,3,2,39089,2566587,35,0.0,0.0,vidore/colpali-v1.3-hf
+glm4,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,20,7,38397,1177747,1107,0.05,1,zai-org/GLM-4-9B-0414
+glm,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,5,2,38141,268391,104,0.0,0.0,zai-org/glm-4-9b-chat-hf
+dbrx,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,7,6,36394,1471917,52,0.0,0.0,trl-internal-testing/tiny-DbrxForCausalLM
+arcee,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,4,3,34672,316364,128,0.0,0.0,arcee-ai/AFM-4.5B-Base
+xlm_roberta_xl,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,True,False,False,4,3,34124,1348612,51,0.0,0.0,facebook/xlm-roberta-xl
+swin2sr,vision,vision_encoder,True,False,False,3,1,ForImageSuperResolution,False,False,False,5,1,31106,4965140,85,0.6,1,caidas/swin2SR-classical-sr-x2-64
+sew_d,audio,speech,True,False,False,5,2,ctc-speech-recognition; text-classification,False,False,False,3,2,31006,1542131,5,0.0,0.0,asapp/sew-d-tiny-100k
+git,multimodal,multimodal,True,False,False,5,1,text-generation,False,False,False,13,2,30009,15159105,344,0.0,0.0,microsoft/git-base
+pix2struct,multimodal,multimodal,True,False,False,4,1,conditional-generation,False,False,False,18,4,29795,8548092,715,0.0,0.0,google/pix2struct-textcaps-base
+sew,audio,speech,True,False,False,4,2,ctc-speech-recognition; text-classification,True,False,False,2,1,29274,386695,3,0.0,0.0,asapp/sew-tiny-100k
+unispeech,audio,speech,True,False,False,4,3,ctc-speech-recognition; pretraining; text-classification,True,False,False,2,2,29103,370514,1,0.0,0.0,microsoft/unispeech-large-1500h-cv
+got_ocr2,vision,encoder_decoder,True,False,False,3,1,conditional-generation,True,False,False,1,1,28568,830425,227,0.0,0.0,stepfun-ai/GOT-OCR-2.0-hf
+upernet,vision,vision_encoder,True,False,False,1,1,semantic-segmentation,False,False,False,9,1,28548,3330822,52,0.0,0.0,openmmlab/upernet-convnext-small
+squeezebert,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,3,2,28520,2543017,3,0.0,0.0,optimum-intel-internal-testing/tiny-random-squeezebert
+exaone_moe,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,2,1,27945,70685,565,0.5,1,LGAI-EXAONE/K-EXAONE-236B-A23B
+bitnet,vision,decoder_only,True,False,False,2,1,text-generation,True,False,False,3,2,24255,256816,1447,4.33,12,microsoft/bitnet-b1.58-2B-4T
+hunyuan_v1_moe,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,1,1,22661,143203,616,0.0,0.0,tencent/Hunyuan-A13B-Instruct
+eomt,multimodal,multimodal,True,False,False,1,1,universal-segmentation,True,False,False,6,1,22281,199528,24,0.17,1,tue-mps/coco_panoptic_eomt_large_640
+instructblip,multimodal,multimodal,True,False,False,6,1,conditional-generation,False,False,False,4,1,22235,4773797,193,0.0,0.0,Salesforce/instructblip-vicuna-7b
+depth_pro,vision,vision_encoder,True,False,False,7,1,depth-estimation,False,False,False,2,2,21707,318743,91,1.5,3,apple/DepthPro-hf
+seggpt,vision,encoder_decoder,True,False,False,4,1,image-segmentation,False,False,False,1,1,21707,248982,5,0.0,0.0,BAAI/seggpt-vit-large
+flava,vision,vision_encoder,True,False,False,6,1,pretraining,False,False,False,1,1,20163,8103158,43,0.0,0.0,facebook/flava-full
+umt5,text,encoder_decoder,True,False,False,3,4,conditional-generation; question-answering; text-classification; token-classification,False,False,False,6,3,19861,37323,47,0.0,0.0,IMISLab/GreekT5-umt5-base-greeksum
+d_fine,multimodal,multimodal,True,False,False,5,1,object-detection,True,False,False,14,2,19607,758708,54,0.0,0.0,ustc-community/dfine-small-coco
+video_llava,multimodal,multimodal,True,False,False,2,1,conditional-generation,False,False,False,1,1,19000,392835,50,0.0,0.0,LanguageBind/Video-LLaVA-7B-hf
+moonshine_streaming,text,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,3,1,18171,31502,31,0.0,0.0,UsefulSensors/moonshine-streaming-medium
+mpt,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,False,False,False,36,26,17664,1781430,1405,0.0,0.0,anas-awadalla/mpt-7b
+ernie4_5,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,3,2,16274,585787,124,0.0,0.0,baidu/ERNIE-4.5-0.3B-PT
+rag,text,unknown,True,False,False,2,2,ForGeneration,False,False,False,4,1,16033,7733556,249,0.0,0.0,facebook/rag-sequence-nq
+informer,text,encoder_decoder,True,False,False,4,1,ForPrediction,True,False,False,1,1,15663,569952,9,0.0,0.0,huggingface/informer-tourism-monthly
+rwkv,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,19,6,14959,1034997,130,0.0,0.0,RWKV/rwkv-4-169m-pile
+lasr,text,speech,True,False,False,2,1,ctc-speech-recognition,True,False,False,1,1,14606,76939,297,2.0,2,google/medasr
+xcodec,audio,speech,True,False,False,4,0,,False,False,False,6,2,14012,283073,3,0.0,0.0,hf-audio/xcodec-hubert-general
+data2vec,audio,speech,True,False,False,10,12,ForXVector; audio-frame-classification; ctc-speech-recognition; fill-mask; image-classification; multiple-choice; question-answering; semantic-segmentation; text-classification; text-generation; token-classification,True,False,False,8,2,13529,1468192,83,0.0,0.0,facebook/data2vec-audio-base-960h
+recurrent_gemma,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,4,1,13357,205925,319,0.0,0.0,google/recurrentgemma-2b
+encoder_decoder,text,encoder_decoder,True,False,False,1,0,,False,True,False,25,14,12879,4983518,203,0.0,0.0,optimum-internal-testing/tiny-random-encoder-decoder-gpt2-bert
+persimmon,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,False,False,False,3,2,12103,263758,70,0.0,0.0,adept/persimmon-8b-chat
+align,multimodal,multimodal,True,False,False,6,0,,False,False,False,1,1,11724,1007241,31,0.0,0.0,kakaobrain/align-base
+flex_olmo,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,6,2,11627,82069,61,0.0,0.0,allenai/Flex-reddit-2x7B-1T
+doge,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,12,1,10806,428703,56,0.0,0.0,SmallDoge/Doge-320M
+xmod,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,False,False,False,5,3,10691,469008,47,0.0,0.0,facebook/xmod-base
+timesfm2_5,text,unknown,True,False,False,2,2,ForPrediction,True,False,False,1,1,10609,12249,44,7.0,7,google/timesfm-2.5-200m-transformers
+musicflamingo,multimodal,multimodal,True,False,False,1,1,conditional-generation,True,False,False,3,2,10554,26751,123,1.33,3,nvidia/music-flamingo-2601-hf
+musicgen_melody,audio,speech,True,False,False,3,2,conditional-generation; text-generation,False,False,False,6,2,9478,175270,363,0.0,0.0,facebook/musicgen-melody
+dots1,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,2,1,9452,86736,241,0.0,0.0,rednote-hilab/dots.llm1.inst
+superglue,multimodal,multimodal,True,False,False,2,1,ForKeypointMatching,False,False,False,2,1,8998,380563,6,0.0,0.0,magic-leap-community/superglue_outdoor
+edgetam_video,text,encoder_decoder,True,False,False,5,0,,True,False,False,1,1,8689,44627,72,0.0,0.0,yonigozlan/EdgeTAM-hf
+idefics,multimodal,multimodal,True,False,False,2,1,ForVisionText2Text,False,False,False,4,1,8656,850443,412,0.0,0.0,HuggingFaceM4/idefics-80b-instruct
+kyutai_speech_to_text,audio,speech,True,False,False,2,1,conditional-generation,True,False,False,2,1,8338,60487,21,0.0,0.0,kyutai/stt-2.6b-en-trfs
+ibert,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,2,1,8099,467518,1,0.0,0.0,kssteven/ibert-roberta-base
+cvt,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,5,1,7998,653182,22,0.0,0.0,microsoft/cvt-13
+ovis2,vision,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,2,1,7890,27643,0,0.0,0.0,thisisiron/Ovis2-1B-hf
+autoformer,text,encoder_decoder,True,False,False,4,1,ForPrediction,False,False,False,1,1,7803,800624,10,0.0,0.0,huggingface/autoformer-tourism-monthly
+maskformer,multimodal,multimodal,True,False,False,9,1,instance-segmentation,True,False,False,11,2,7703,2921847,140,0.0,0.0,facebook/maskformer-swin-base-coco
+patchtst,text,unknown,True,False,False,3,4,ForClassification; ForPrediction; ForPretraining; ForRegression,False,False,False,6,3,7703,125181,23,0.0,0.0,ibm-granite/granite-timeseries-patchtst
+ijepa,vision,vision_encoder,True,False,False,3,1,image-classification,True,False,False,4,1,7436,546513,20,0.0,0.0,facebook/ijepa_vith14_1k
+jais2,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,2,1,6847,30496,39,0.5,1,inceptionai/Jais-2-8B-Chat
+mamba2,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,4,2,6272,6272,0,0.0,0.0,deqing/mamba2-300M-v5-mamba2
+aimv2,text,unknown,True,False,False,5,0,,True,False,False,6,1,6203,213773,97,0.17,1,apple/aimv2-large-patch14-224-lit
+higgs_audio_v2_tokenizer,audio,speech,True,False,False,2,0,,True,False,False,1,1,6066,9455,0,0.0,0.0,eustlb/higgs-audio-v2-tokenizer
+mobilenet_v1,vision,vision_encoder,True,False,False,2,1,image-classification,False,False,False,2,1,5630,3623791,3,0.0,0.0,google/mobilenet_v1_0.75_192
+efficientloftr,vision,vision_encoder,True,False,False,2,1,ForKeypointMatching,True,False,False,3,2,5569,71963,103,0.0,0.0,zju-community/matchanything_eloftr
+sam_hq,vision,encoder_decoder,True,False,False,6,0,,True,False,False,3,1,5226,103845,20,0.0,0.0,syscv-community/sam-hq-vit-base
+unispeech_sat,audio,speech,True,False,False,4,5,ForXVector; audio-frame-classification; ctc-speech-recognition; pretraining; text-classification,True,False,False,8,1,5082,2775924,11,0.0,0.0,microsoft/unispeech-sat-base-plus-sv
+switch_transformers,text,encoder_decoder,True,False,False,3,1,conditional-generation,True,False,False,6,1,4897,837913,335,0.0,0.0,google/switch-base-8
+mobilevitv2,vision,vision_encoder,True,False,False,3,2,image-classification; semantic-segmentation,False,False,False,4,3,4596,233303,14,0.0,0.0,apple/mobilevitv2-1.0-imagenet1k-256
+vaultgemma,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,1,1,4551,31618,240,0.0,0.0,google/vaultgemma-1b
+jetmoe,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,3,1,4241,50576,289,0.0,0.0,jetmoe/jetmoe-8b
+shieldgemma2,vision,vision_encoder,True,False,False,0,1,image-classification,False,False,False,1,1,4068,247486,155,2.0,2,google/shieldgemma-2-4b-it
+youtu,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,2,1,4034,19918,269,0.0,0.0,tencent/Youtu-LLM-2B-Base
+pvt_v2,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,3,1,3972,200506,6,0.0,0.0,OpenGVLab/pvt_v2_b0
+lw_detr,vision,vision_encoder,True,False,False,6,1,object-detection,True,False,False,10,3,3848,5849,0,0.0,0.0,nielsr/lw-detr-medium-tray-detection
+higgs_audio_v2,audio,speech,True,False,False,2,1,conditional-generation,True,False,False,2,1,3787,7543,2,0.0,0.0,eustlb/higgs-audio-v2-generation-3B-base
+eomt_dinov3,multimodal,multimodal,True,False,False,1,1,universal-segmentation,True,False,False,6,1,3619,8979,1,0.0,0.0,tue-mps/eomt-dinov3-coco-panoptic-large-640
+zamba,text,decoder_only,True,False,False,2,2,text-classification; text-generation,False,False,False,1,1,3516,24324,29,0.0,0.0,Zyphra/Zamba-7B-v1
+levit,vision,vision_encoder,True,False,False,3,2,ForImageClassificationWithTeacher; image-classification,False,False,False,3,1,3437,93751,4,0.0,0.0,facebook/levit-128S
+dab_detr,vision,vision_encoder,True,False,False,6,1,object-detection,False,False,False,1,1,3108,23706,2,0.0,0.0,IDEA-Research/dab-detr-resnet-50
+pvt,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,2,2,3092,75792,0,0.0,0.0,Zetatech/pvt-tiny-224
+glpn,vision,vision_encoder,True,False,False,4,1,depth-estimation,False,False,False,3,2,3057,3449949,34,0.67,1,vinvino02/glpn-kitti
+regnet,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,6,1,2655,113514,3,0.0,0.0,facebook/regnet-y-040
+focalnet,vision,vision_encoder,True,False,False,3,2,image-classification; masked-image-modeling,False,False,False,3,1,2608,58211,1,0.0,0.0,microsoft/focalnet-tiny
+fast_vlm,text,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,2,1,2522,7842,0,0.0,0.0,KamilaMila/FastVLM-0.5B
+bit,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,1,1,2474,406995,5,0.0,0.0,google/bit-50
+lxmert,text,encoder_only,True,False,False,4,2,pretraining; question-answering,False,False,False,2,1,2404,6843573,5,0.0,0.0,unc-nlp/lxmert-base-uncased
+visual_bert,multimodal,multimodal,True,False,False,3,5,ForRegionToPhraseAlignment; ForVisualReasoning; multiple-choice; pretraining; question-answering,False,False,False,4,1,2354,1019737,12,0.0,0.0,uclanlp/visualbert-vqa-coco-pre
+mvp,text,encoder_decoder,True,False,False,4,4,conditional-generation; question-answering; text-classification; text-generation,False,False,False,3,2,2352,406826,36,0.0,0.0,RUCAIBox/mvp
+decision_transformer,text,unknown,True,False,False,4,0,,False,False,False,3,1,2297,208396,27,0.0,0.0,edbeeching/decision-transformer-gym-hopper-medium
+time_series_transformer,text,encoder_decoder,True,False,False,4,1,ForPrediction,False,False,False,2,2,2295,136995,31,0.0,0.0,huggingface/time-series-transformer-tourism-monthly
+swiftformer,vision,vision_encoder,True,False,False,4,1,image-classification,False,False,False,2,1,2253,107175,9,0.0,0.0,MBZUAI/swiftformer-xs
+pegasus_x,text,encoder_decoder,True,False,False,4,1,conditional-generation,False,False,False,7,5,2178,192254,72,0.0,0.0,google/pegasus-x-base
+groupvit,vision,vision_encoder,True,False,False,6,0,,False,False,False,1,1,2001,88196,6,0.0,0.0,nvidia/groupvit-gcc-yfcc
+speech_encoder_decoder,audio,speech,True,False,False,1,0,,False,False,False,3,2,1995,52007,11,0.0,0.0,patrickvonplaten/wav2vec2-2-bart-base
+modernbert_decoder,text,decoder_only,True,False,False,2,2,text-classification; text-generation,True,False,False,3,2,1948,10683,4,0.0,0.0,jhu-clsp/ettin-decoder-32m
+imagegpt,vision,vision_encoder,True,False,False,2,2,ForCausalImageModeling; image-classification,False,False,False,3,1,1908,149895,80,0.0,0.0,openai/imagegpt-small
+tvp,multimodal,multimodal,True,False,False,4,1,ForVideoGrounding,False,False,False,2,2,1897,309925,1,0.0,0.0,Jiqing/tiny-random-tvp
+deepseek_vl_hybrid,multimodal,multimodal,True,False,False,2,1,conditional-generation,True,False,False,1,1,1833,10551,1,0.0,0.0,deepseek-community/deepseek-vl-7b-chat
+roberta_prelayernorm,text,decoder_only,True,False,False,3,6,fill-mask; multiple-choice; question-answering; text-classification; text-generation; token-classification,False,False,False,4,3,1762,85552,2,0.0,0.0,andreasmadsen/efficient_mlm_m0.40
+deepseek_vl,multimodal,multimodal,True,False,False,2,1,conditional-generation,True,False,False,1,1,1759,11598,2,0.0,0.0,deepseek-community/deepseek-vl-1.3b-chat
+hiera,vision,vision_encoder,True,False,False,4,2,image-classification; pretraining,False,False,False,4,1,1621,137157,3,0.0,0.0,facebook/hiera-tiny-224-hf
+nanochat,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,4,4,1529,1749,2,0.0,0.0,Twobombs/nanochat-d34-sft-hf
+yoso,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,1,1,1418,154382,0,0.0,0.0,uw-madison/yoso-4096
+chmv2,vision,vision_encoder,True,False,False,1,1,depth-estimation,True,False,False,1,1,1394,1394,11,0.0,0.0,facebook/dinov3-vitl16-chmv2-dpt-head
+poolformer,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,1,1,1372,43485,1,0.0,0.0,sail/poolformer_s12
+patchtsmixer,text,unknown,True,False,False,3,5,ForPrediction; ForPredictionHead; ForPretraining; ForRegression; ForTimeSeriesClassification,False,False,False,3,2,1346,52306,25,0.0,0.0,ibm-granite/granite-timeseries-patchtsmixer
+vipllava,multimodal,multimodal,True,False,False,2,1,conditional-generation,True,False,False,1,1,1342,997697,16,0.0,0.0,llava-hf/vip-llava-7b-hf
+mra,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,2,1,1326,147596,1,0.0,0.0,uw-madison/mra-base-512-4
+nystromformer,text,encoder_only,True,False,False,3,5,fill-mask; multiple-choice; question-answering; text-classification; token-classification,False,False,False,1,1,1316,61955,2,0.0,0.0,uw-madison/nystromformer-512
+jina_embeddings_v3,text,encoder_only,True,False,False,2,4,fill-mask; question-answering; text-classification; token-classification,True,False,False,1,1,1242,1242,2,1.0,1,jinaai/jina-embeddings-v3-hf
+univnet,text,unknown,True,False,False,1,0,,False,False,False,1,1,1187,27049,1,0.0,0.0,dg845/univnet-dev
+textnet,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,2,1,1154,12203,7,0.0,0.0,czczup/textnet-base
+vit_msn,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,2,1,1063,186378,5,0.0,0.0,facebook/vit-msn-small
+ministral,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,3,3,1009,1043,0,0.0,0.0,snezhanata/alpaca_dev_v5
+helium,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,1,1,1008,34359,144,0.0,0.0,kyutai/helium-1-preview-2b
+nllb_moe,text,encoder_decoder,True,False,False,4,1,conditional-generation,False,False,False,1,1,954,42555,123,0.0,0.0,facebook/nllb-moe-54b
+ministral3,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,5,4,941,2079,0,0.0,0.0,yujiepan/ministral-3-tiny-random
+cpmant,text,decoder_only,True,False,False,3,1,text-generation,False,False,False,1,1,903,227179,23,0.0,0.0,openbmb/cpm-ant-10b
+vision_text_dual_encoder,text,unknown,True,False,False,1,0,,False,False,False,4,4,901,165147,21,0.0,0.0,clip-italian/clip-italian
+vibevoice_acoustic_tokenizer,text,encoder_decoder,True,False,False,0,0,,True,False,False,2,2,815,2379,13,0.0,0.0,microsoft/VibeVoice-AcousticTokenizer
+paddleocr_vl,vision,encoder_decoder,True,False,False,5,1,conditional-generation,True,False,False,3,3,604,3499,6,0.0,0.0,strangervisionhf/PaddleOCR-VL-1.5-hf-transformers-v5.2.0.dev0
+pixio,text,unknown,True,False,False,3,0,,True,False,False,2,2,569,1967,12,0.5,1,LiheYoung/pixio-vith16
+videomt,multimodal,multimodal,True,False,False,1,1,universal-segmentation,True,False,False,1,1,548,664,0,0.0,0.0,tue-mps/videomt-dinov2-small-ytvis2019
+voxtral_realtime,multimodal,multimodal,True,False,False,4,2,conditional-generation; text-generation,True,False,False,1,1,485,485,0,0.0,0.0,onnx-internal-testing/tiny-random-VoxtralRealtimeForConditionalGeneration
+hgnet_v2,vision,vision_encoder,True,False,False,2,1,image-classification,True,False,False,1,1,464,894,0,0.0,0.0,ustc-community/hgnet-v2
+pixtral,multimodal,multimodal,True,False,False,2,0,,False,False,False,3,1,432,7938,17,0.0,0.0,mlx-community/pixtral-12b-8bit
+voxtral,audio,speech,True,False,False,2,1,conditional-generation,True,False,False,2,2,387,1798,1,0.0,0.0,pphilip/voxtral-3B-atc-transcribe
+mistral4,text,decoder_only,True,False,False,2,3,text-classification; text-generation; token-classification,True,False,False,1,1,324,324,1,0.0,0.0,onnx-internal-testing/tiny-random-Mistral4ForCausalLM
+diffllama,text,decoder_only,True,False,False,2,4,question-answering; text-classification; text-generation; token-classification,True,False,False,1,1,240,240,0,0.0,0.0,kajuma/diffllama-1B-sft-5e4
+pop2piano,text,encoder_decoder,True,False,False,1,1,conditional-generation,False,False,False,1,1,136,8831,1,0.0,0.0,Tim-gubski/Audio2Hero
+xlstm,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,1,1,108,495,3,0.0,0.0,ethicalabs/xLSTM-7b-Instruct
+dinat,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,1,1,107,14165,1,0.0,0.0,shi-labs/dinat-mini-in1k-224
+lighton_ocr,text,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,1,1,105,148,0,0.0,0.0,ajayrathi100699/LightOnOCR-2-1B-iam-merged_v3
+sam2,vision,encoder_decoder,True,False,False,6,0,,True,False,False,1,1,96,96,1,0.0,0.0,merve/sam2-large-micromat
+perception_lm,vision,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,1,1,78,365,1,0.0,0.0,Dhruvil03/Perception-LM-1B-Int4bit
+auto,multimodal,multimodal,True,False,False,1,41,ForAudioTokenization; ForImageTextToText; ForKeypointDetection; ForKeypointMatching; ForMaskGeneration; ForMultimodalLM; ForTableQuestionAnswering; ForTableRecognition; ForTextRecognition; ForTextToSpectrogram; ForTimeSeriesPrediction; audio-classification; audio-frame-classification; audio-xvector; automatic-speech-recognition; ctc-speech-recognition; depth-estimation; document-question-answering; fill-mask; image-classification; image-segmentation; image-to-image; instance-segmentation; masked-image-modeling; multiple-choice; next-sentence-prediction; object-detection; pretraining; question-answering; semantic-segmentation; text-classification; text-encoding; text-generation; text-to-waveform; text2text-generation; token-classification; universal-segmentation; video-classification; visual-question-answering; zero-shot-image-classification; zero-shot-object-detection,False,True,False,0,0,0,0,0,0,0,
+barthez,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+bartpho,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+bert_japanese,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+bertweet,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+blt,text,decoder_only,True,False,False,4,1,text-generation,True,False,False,0,0,0,0,0,0,0,
+bridgetower,multimodal,multimodal,True,False,False,5,3,ForContrastiveLearning; ForImageAndTextRetrieval; fill-mask,False,False,False,0,0,0,0,0,0,0,
+byt5,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+code_llama,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+colmodernvbert,text,unknown,True,False,False,1,1,ForRetrieval,True,False,False,0,0,0,0,0,0,0,
+cpm,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+cwm,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,0,0,0,0,0,0,0,
+deprecated,unknown,unknown,False,False,False,0,0,,False,True,True,0,0,0,0,0,0,0,
+dia,audio,speech,True,False,False,4,1,conditional-generation,True,False,False,0,0,0,0,0,0,0,
+dialogpt,unknown,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+dit,unknown,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+donut,vision,vision_encoder,True,False,False,3,1,image-classification,False,False,False,0,0,0,0,0,0,0,
+edgetam,text,encoder_decoder,True,False,False,5,0,,True,False,False,0,0,0,0,0,0,0,
+emu3,multimodal,multimodal,True,False,False,5,2,conditional-generation; text-generation,True,False,False,0,0,0,0,0,0,0,
+ernie4_5_vl_moe,multimodal,multimodal,True,False,False,10,2,conditional-generation,True,False,False,0,0,0,0,0,0,0,
+evolla,multimodal,multimodal,True,False,False,6,1,ForProteinText2Text,True,False,False,0,0,0,0,0,0,0,
+glm46v,vision,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,0,0,0,0,0,0,0,
+glm_image,vision,encoder_decoder,True,False,False,4,1,conditional-generation,True,False,False,0,0,0,0,0,0,0,
+gpt_sw3,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+granitemoeshared,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,0,0,0,0,0,0,0,
+herbert,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+instructblipvideo,multimodal,multimodal,True,False,False,6,1,conditional-generation,True,False,False,0,0,0,0,0,0,0,
+layoutxlm,text,unknown,False,False,False,0,0,,True,True,False,0,0,0,0,0,0,0,
+longcat_flash,text,decoder_only,True,False,False,2,1,text-generation,True,False,False,0,0,0,0,0,0,0,
+mbart50,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+megatron_gpt2,unknown,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+mlcd,text,unknown,True,False,False,3,0,,True,False,False,0,0,0,0,0,0,0,
+mluke,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+modernvbert,text,encoder_only,True,False,False,2,3,fill-mask; text-classification; token-classification,True,False,False,0,0,0,0,0,0,0,
+musicgen,audio,speech,True,False,False,3,2,conditional-generation; text-generation,False,False,False,0,0,0,0,0,0,0,
+myt5,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+nllb,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+nougat,multimodal,multimodal,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+omdet_turbo,vision,vision_encoder,True,False,False,5,1,object-detection,False,False,False,0,0,0,0,0,0,0,
+pe_audio,audio,speech,True,False,False,5,0,,True,False,False,0,0,0,0,0,0,0,
+pe_audio_video,audio,speech,True,False,False,3,0,,True,False,False,0,0,0,0,0,0,0,
+pe_video,text,unknown,True,False,False,3,0,,True,False,False,0,0,0,0,0,0,0,
+phi4_multimodal,multimodal,multimodal,True,False,False,7,1,text-generation,True,False,False,0,0,0,0,0,0,0,
+phobert,text,unknown,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+pi0,vision,encoder_decoder,True,False,False,2,1,conditional-generation,True,False,False,0,0,0,0,0,0,0,
+pp_chart2table,vision,vision_encoder,False,False,False,0,0,,True,True,False,0,0,0,0,0,0,0,
+pp_doclayout_v2,vision,vision_encoder,True,False,False,6,1,object-detection,True,False,False,0,0,0,0,0,0,0,
+pp_lcnet,vision,vision_encoder,True,False,False,2,1,image-classification,True,False,False,0,0,0,0,0,0,0,
+pp_lcnet_v3,text,unknown,True,False,False,2,0,,True,False,False,0,0,0,0,0,0,0,
+pp_ocrv5_mobile_det,vision,vision_encoder,True,False,False,2,1,object-detection,True,False,False,0,0,0,0,0,0,0,
+pp_ocrv5_mobile_rec,text,unknown,True,False,False,2,1,ForTextRecognition,True,False,False,0,0,0,0,0,0,0,
+pp_ocrv5_server_det,vision,vision_encoder,True,False,False,2,1,object-detection,True,False,False,0,0,0,0,0,0,0,
+pp_ocrv5_server_rec,vision,vision_encoder,True,False,False,2,1,ForTextRecognition,True,False,False,0,0,0,0,0,0,0,
+prompt_depth_anything,vision,vision_encoder,True,False,False,1,1,depth-estimation,True,False,False,0,0,0,0,0,0,0,
+sam3,vision,encoder_decoder,True,False,False,9,0,,True,False,False,0,0,0,0,0,0,0,
+sam3_tracker,vision,encoder_decoder,True,False,False,4,0,,True,False,False,0,0,0,0,0,0,0,
+sam3_tracker_video,vision,encoder_decoder,True,False,False,5,0,,True,False,False,0,0,0,0,0,0,0,
+slanext,vision,vision_encoder,True,False,False,2,1,ForTableRecognition,True,False,False,0,0,0,0,0,0,0,
+timesfm,text,unknown,True,False,False,2,2,ForPrediction,True,False,False,0,0,0,0,0,0,0,
+timm_backbone,text,unknown,True,False,False,0,0,,False,False,False,0,0,0,0,0,0,0,
+trocr,text,decoder_only,True,False,False,2,1,text-generation,False,False,False,0,0,0,0,0,0,0,
+uvdoc,vision,vision_encoder,True,False,False,2,0,,True,False,False,0,0,0,0,0,0,0,
+vitdet,vision,vision_encoder,True,False,False,3,0,,False,False,False,0,0,0,0,0,0,0,
+vitpose_backbone,vision,vision_encoder,True,False,False,2,0,,False,False,False,0,0,0,0,0,0,0,
+wav2vec2_phoneme,audio,speech,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
+wav2vec2_with_lm,audio,speech,False,False,False,0,0,,False,True,False,0,0,0,0,0,0,0,
